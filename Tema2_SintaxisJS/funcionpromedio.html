@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>JavaScript</p>
+    <script>
+        let notas = [5, 7, 2.5, 7.9, 9.5];
+
+      function promedio(notas) {
+        let suma = 0;
+        for (let i = 0; i < notas.length; i++) {
+          suma += notas[i];
+        }
+        return suma / notas.length;
+      }
+
+      alert(promedio(notas));
+      alert(promedio([6, 5, 1, 10, 3, 9, 8]));
+    </script>
+  </body>
+</html>
