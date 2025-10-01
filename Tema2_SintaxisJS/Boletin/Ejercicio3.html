@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = [], suma = 0, cantidad;
+
+        do {
+            cantidad = Number(prompt("¿Cuántos números quieres introducir?"))
+        } while (isNaN(cantidad) || cantidad == 0);
+
+        for (let i = 0 ; i < cantidad ; i++) {
+            numeros[i] = Number(prompt(`Introduce el número nº${i+1}`));
+            if (isNaN(numeros[i])) {
+                i--;
+                alert("No has metido un número, vuelve a introducirlo.")
+            } else {
+                suma += numeros[i];
+            }
+        }
+
+        alert(`La suma de los números es de: ${suma}`);
+    </script>
+</body>
+</html>
