@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rescatar contenido de un cuadro de texto</h1>
+    <br>
+    <input type="text" id="nombre">
+    <br>
+    <input type="button" onclick="rescatar()" value="Rescatar">
+    <script>
+        function rescatar() {
+            let ctrNombre = document.getElementById("nombre");
+            let valorCtrNombre = ctrNombre.value;
+            alert(valorCtrNombre);
+        }
+    </script>
+</body>
+</html>

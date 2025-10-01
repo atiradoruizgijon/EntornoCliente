@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <h1>Pedir datos</h1>
+    <label for="nombre">Nombre:<input type="text" id="nombre" /></label><br>
+    <label for="edad">Edad:<input type="number" id="edad" /></label><br>
+    <label for="altura">Altura:<input type="number" id="altura" /></label><br>
+    <label for="fumador">Fumador:<input type="checkbox" id="fumador"/></label><br>
+    <input type="button" onclick="pedirDatos()" value="Enviar">
+    <p>Resultado:</p>
+    <textarea cols="50" rows="8" id="resultado"></textarea>
+    <script>
+      function pedirDatos() {
+        let mostrar = true;
+        let nombre = document.getElementById("nombre").value;
+        if (nombre == "") {
+            alert("No has introducido un nombre.");
+            mostrar = false;
+        }
+        let edad = Number(document.getElementById("edad").value);
+        let altura = Number(document.getElementById("altura").value);
+        let fumador = document.getElementById("fumador").checked;
+
+        let resultado = `Te llamas ${nombre}, tienes ${edad} años, mides ${altura} y ${fumador ? "sí":"no"} fumas`;
+        // No lo muestra si no ha introducido un nombre
+        if (mostrar)
+        document.getElementById("resultado").value = resultado;
+      }
+    </script>
+  </body>
+</html>

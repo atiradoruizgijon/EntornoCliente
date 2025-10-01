@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Solicitar datos al usuario mediante prompt</h1>
+    <input type="button" onclick="pedirDatos()" value="Solicitar Datos">
+    <script>
+        function pedirDatos() {
+            let nombre, edad, altura, fumador;
+
+            do {
+                nombre = prompt("Dime tu nombre");    
+            } while (nombre == "");
+
+            console.log(`tipado de var. nombre es ${typeof nombre}`);
+
+            do {
+                edad = Number(prompt("Dime tu edad"));
+            } while (isNaN(edad));
+
+            altura = Number(prompt("Dime tu altura"));
+            fumador = prompt("¿Eres fumador? (S/N)").toUpperCase();
+            fumador = fumador == "S" ? true:false;
+            /* Otra forma
+            if (fumador = "S") fumador = true;
+            else fumador = false;
+            */
+
+            let mensaje = `Te llamas ${nombre}, tienes ${edad} años, una altura de ${altura} y ${fumador ? "sí":"no"} eres fumador`;
+            alert(mensaje);
+        }
+    </script>
+</body>
+</html>

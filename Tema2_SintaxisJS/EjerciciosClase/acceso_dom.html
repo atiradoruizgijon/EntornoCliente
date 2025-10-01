@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Datos</title>
+</head>
+
+<body>
+
+  <h2>Introduce tus datos</h2>
+
+  <form action="">
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre"><br><br>
+
+    <label for="edad">Edad:</label><br>
+    <input type="number" id="edad"><br><br>
+
+    <label for="altura">Altura (cm):</label><br>
+    <input type="number" id="altura"><br><br>
+
+    <label>
+      <input type="checkbox" id="fumador">
+      Fumador
+    </label><br><br>
+  </form>
+
+  <input type="button" onclick="mostrarDatos()" value="Enviar">
+  <br><br>
+
+  <label for="resultado">Resultados:</label><br>
+  <textarea id="resultado" rows="5" cols="50" readonly></textarea><br><br>
+
+  <script>
+    function mostrarDatos() {
+      let nombre = document.getElementById("nombre").value;
+      let edad = parseInt(document.getElementById("edad").value);
+      let altura = parseFloat(document.getElementById("altura").value);
+      let fumador = document.getElementById("fumador").checked;
+
+      let texto = "Te llamas " + nombre + ", tienes " + edad + " años, mides " + altura + " cm y " + (fumador ? "sí" : "no") + " eres fumador.";
+
+      document.getElementById("resultado").value = texto;
+    }
+  </script>
+</body>
+
+</html>
