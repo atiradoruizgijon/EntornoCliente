@@ -11,10 +11,13 @@
 
         do {
             cantidad = Number(prompt("¿Cuántos números quieres introducir?"))
+        // En caso de meter 0 o texto en el prompt
         } while (isNaN(cantidad) || cantidad == 0);
 
         for (let i = 0 ; i < cantidad ; i++) {
             numeros[i] = Number(prompt(`Introduce el número nº${i+1}`));
+            
+            // En caso de meter 0 o texto en el prompt
             if (isNaN(numeros[i]) || numeros[i] == 0) {
                 i--;
                 alert("No has metido un número, vuelve a introducirlo.")

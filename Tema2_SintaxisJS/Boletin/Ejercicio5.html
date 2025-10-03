@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Notas</h2>
+    <p>Nota 1:</p>
+    <input type="number" id="nota1">
+    <p>Nota 2:</p>
+    <input type="number" id="nota2">
+    <p>Nota 3:</p>
+    <input type="number" id="nota3"><br>
+    <input type="button" value="Comprobar" onclick="comprobarNota()">
+
+    <script>
+        function comprobarNota() {
+            let notas = [];
+            let repetir = false;
+
+            for (let i = 0; i < 3; i++) {
+                notas[i] = Number(document.getElementById("nota" + (i + 1)).value);
+
+                // para ver en la consola si se meten en el array
+                console.log(notas[i]);
+
+                // isNaN no hace falta, el input es number y no deja poner texto, pero bueno
+                if ((notas[i] > 10 || notas[i] < 0) || isNaN(notas[i])) {
+                    repetir = true;
+                }
+            }
+
+            if (repetir) {
+                alert("No has introducido bien las notas.");
+            } else {
+                let notaMedia = calcularNotaMedia(notas[0], notas[1], notas[2]);
+                // ver si se introduce la nota media
+                console.log(notaMedia);
+
+                if (notaMedia >= 0 && notaMedia < 5) {
+                    alert(`Tu nota es de ${notaMedia}, insuficiente.`);
+                }
+                if (notaMedia >= 5 && notaMedia < 6) {
+                    alert(`Tu nota es de ${notaMedia}, suficiente.`);
+                }
+                if (notaMedia >= 6 && notaMedia < 7) {
+                    alert(`Tu nota es de ${notaMedia}, bien.`);
+                }
+                if (notaMedia >= 7 && notaMedia < 9) {
+                    alert(`Tu nota es de ${notaMedia}, notable.`);
+                }
+                if (notaMedia >= 9 && notaMedia <= 10) {
+                    alert(`Tu nota es de ${notaMedia}, sobresaliente.`);
+                }
+            }
+        }
+        function calcularNotaMedia(n1, n2, n3) {
+            return ((n1 + n2 + n3) / 3);
+        }
+    </script>
+</body>
+
+</html>

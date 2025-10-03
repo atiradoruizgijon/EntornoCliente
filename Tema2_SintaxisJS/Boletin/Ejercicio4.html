@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cálculo de volumen de cilintro</h2>
+    <p>Altura del cilindro: </p>
+    <input type="number" id="altura"><br>
+    <p>Radio de la base del cilindro:</p>
+    <input type="number" id="radio">
+    <p>Resultado:</p>
+    <textarea id="resultado"></textarea><br>
+    <input type="button" value="Calcular" onclick="calcular()">
+
+    <script>
+        function calcular() {
+            let altura = Number(document.getElementById("altura").value);
+            let radio = Number(document.getElementById("radio").value);
+
+            if ((altura || radio) < 1 || isNaN((altura || radio))) {
+                alert("Medidas mal introducidas. No puede contener texto y tienen que ser mayor a 0.");
+            } else {
+                document.getElementById("resultado").value = volumenCilindro(radio, altura);
+            }
+        }
+        function volumenCilindro(radio, altura) {
+            return radio**2 * altura * Math.PI;
+        }
+    </script>
+</body>
+</html>
