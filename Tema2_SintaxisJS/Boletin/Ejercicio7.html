@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Calcular aumento de sueldo:</h2>
+
+    <label for="aniosAnt">Años de antigüedad: </label>
+    <input type="number" id="aniosAnt">
+    <br>
+    <label for="sueldo">Sueldo: </label>
+    <input type="number" id="sueldo">
+    <br>
+    <input type="button" value="Calcular" onclick="calcularAumento()">
+    <br>
+    <br>
+    <label for="sueldoFinal">Sueldo a pagar: </label>
+    <textarea id="sueldoFinal"></textarea>
+
+    <script>
+        function calcularAumento() {
+            let anios = Number(document.getElementById("aniosAnt").value);
+            let sueldo = Number(document.getElementById("sueldo").value);
+
+            console.log(anios);
+            console.log(sueldo);
+
+            if (sueldo < 500 && anios >= 10) {
+                let aumento = sueldo * 1.2;
+                console.log(aumento);
+                document.getElementById("sueldoFinal").value = aumento;
+            }
+            if (sueldo < 500 && anios < 10) {
+                let aumento = sueldo * 1.05;
+                console.log(aumento);
+                document.getElementById("sueldoFinal").value = aumento;
+            }
+            if (sueldo >= 500) {
+                document.getElementById("sueldoFinal").value = sueldo;
+            }
+        }
+    </script>
+</body>
+</html>

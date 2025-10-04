@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Calcular porcentaje de aciertos</h2>
+
+    <label for="total">Número total de preguntas:</label>
+    <input type="number" id="total" min="1">
+    <br>
+    <label for="aciertos">Número de respuestas acertadas:</label>
+    <input type="number" id="aciertos" min="0">
+    <br>
+    <input type="submit" onclick="comprobar()" value="Calcular">
+
+
+    <div id="resultado"></div>
+
+    <script>
+        function comprobar() {
+            let total = Number(document.getElementById("total").value);
+            let aciertos = Number(document.getElementById("aciertos").value);
+
+            if (isNaN(total) || isNaN(aciertos)) {
+                alert("Datos inválidos.");
+            } else {
+                let porcentaje = ((aciertos * 100) / total);
+                
+                // debug
+                console.log(total);
+                console.log(aciertos);
+                console.log(porcentaje);
+
+                if (porcentaje >= 90) {
+                    document.getElementById("resultado").innerText = "Excelente";
+                }
+                if (porcentaje < 90 && porcentaje >= 75) {
+                    document.getElementById("resultado").innerText = "Muy bien";
+                }
+                if (porcentaje < 75 && porcentaje >= 50) {
+                    document.getElementById("resultado").innerText = "Bien";
+                }
+                if (porcentaje < 50) {
+                    document.getElementById("resultado").innerText = "Resultado ineficiente";
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>
