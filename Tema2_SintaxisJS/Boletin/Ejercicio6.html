@@ -27,7 +27,8 @@
             let total = Number(document.getElementById("total").value);
             let aciertos = Number(document.getElementById("aciertos").value);
 
-            if (isNaN(total) || isNaN(aciertos)) {
+            // aciertos > total en caso de que se pongan más preguntas acertadas que las que hay
+            if (isNaN(total) || isNaN(aciertos) || aciertos > total) {
                 alert("Datos inválidos.");
             } else {
                 let porcentaje = ((aciertos * 100) / total);
