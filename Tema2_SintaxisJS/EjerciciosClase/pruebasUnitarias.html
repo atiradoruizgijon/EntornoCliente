@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function volumenCilindro(radio, altura) {
+        let volumen = Math.PI * Math.pow(radio, 2) * altura;
+        return volumen;
+      }
+
+      function redondearDecimales(numero, decimales) {
+        return Math.round(numero * Math.pow(10, decimales)) / Math.pow(10, decimales);
+      }
+
+      // Estructura de datos para el testeo
+      let datos = [
+        { radio: 4.5, altura: 6.7, valorEsperado: 426.236 },
+        { radio: 6.1, altura: 4.3, valorEsperado: 502.664 },
+        { radio: 17.8, altura: 9, valorEsperado: 8958.44 }
+      ];
+
+      let testSuperado = true;
+
+      for (let i = 0; i < datos.length; i++) {
+        let volumen = volumenCilindro(datos[i].radio, datos[i].altura);
+        volumen = redondearDecimales(volumen, 3);
+        
+        if (volumen == datos[i].valorEsperado) {
+            console.log(`CORRECTO ==> Para radio = ${datos[i].radio} y altura = ${datos[i].altura} ==> volumen devuelto ${volumen}`);
+        } else {
+            console.log(`FALLO ==> Para radio = ${datos[i].radio} y altura = ${datos[i].altura} ==> volumen devuelto ${volumen}`);
+            testSuperado = false;
+        }
+      }
+      console.log(testSuperado ? "Test superado":"No ha superado el test");
+    </script>
+  </body>
+</html>
