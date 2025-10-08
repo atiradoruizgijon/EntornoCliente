@@ -1,45 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        // Parte 1
-        function esBisiesto(anio) {
-            if (anio % 4 == 0 && (anio % 100 != 0 || anio % 400 == 0)) {
-                return true;
-            }
-            return false;
+      // Parte 1
+      function esBisiesto(anio) {
+        if (anio % 4 == 0 && (anio % 100 != 0 || anio % 400 == 0)) {
+          return true;
         }
-        /*
-        Primera funcion que hice.
+        return false;
+      }
+      // Primera funcion que hice.
+      //  function esBisiesto(anio) {
+      //      if (anio % 4 == 0) {
+      //          if (anio % 100 == 0) {
+      //              if (anio % 400 == 0) {
+      //                  return true;
+      //              }
+      //              return false;
+      //          }
+      //          return true;
+      //      }
+      //      return false;
+      //  }
 
-         function esBisiesto(anio) {
-             if (anio % 4 == 0) {
-                 if (anio % 100 == 0) {
-                     if (anio % 400 == 0) {
-                         return true;
-                     }
-                     return false;
-                 }
-                 return true;
-             }
-             return false;
-         }
-        */
-
-        // Parte 2
-        function testeo1() {
-            for (let i = 1900; i < 2100; i++) {
-                if (esBisiesto(i)) {
-                    console.log(`Año: ${i}`);
-                }
-            }
+      // Parte 2
+      function testeo1() {
+        for (let i = 1900; i < 2101; i++) {
+          if (esBisiesto(i)) {
+            console.log(`Año: ${i}`);
+          }
         }
-        testeo1();
+      }
+      testeo1();
+
+      // Parte 3
+      function testeo2() {
+        let datos = [
+          { anio: 1600, valorEsperado: true },
+          { anio: 2000, valorEsperado: true },
+          { anio: 2016, valorEsperado: true },
+          { anio: 2020, valorEsperado: true },
+          { anio: 2400, valorEsperado: true },
+          { anio: 1700, valorEsperado: false },
+          { anio: 1800, valorEsperado: false },
+          { anio: 1900, valorEsperado: false },
+          { anio: 2015, valorEsperado: false },
+          { anio: 2019, valorEsperado: false },
+        ];
+
+        let testSuperado = true;
+
+        for (let i = 0; i < datos.length; i++) {
+          if (esBisiesto(datos[i].anio) == datos[i].valorEsperado) {
+            console.log(`CORRECTO ==> Para el año ${datos[i].anio} ==> salida: ${esBisiesto(datos[i].anio)}`);
+          } else {
+            console.log(`FALLO ==> Para el año ${datos[i].anio} ==> salida: ${esBisiesto(datos[i].anio)}`);
+            testSuperado = false;
+          }
+        }
+        console.log(testSuperado ? "Test superado" : "No ha superado el test");
+      }
+      testeo2();
     </script>
-</body>
+  </body>
 </html>
