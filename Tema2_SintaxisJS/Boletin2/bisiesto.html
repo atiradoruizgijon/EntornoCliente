@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Parte 1
+        function esBisiesto(anio) {
+            if (anio % 4 == 0 && (anio % 100 != 0 || anio % 400 == 0)) {
+                return true;
+            }
+            return false;
+        }
+        /*
+        Primera funcion que hice.
+
+         function esBisiesto(anio) {
+             if (anio % 4 == 0) {
+                 if (anio % 100 == 0) {
+                     if (anio % 400 == 0) {
+                         return true;
+                     }
+                     return false;
+                 }
+                 return true;
+             }
+             return false;
+         }
+        */
+
+        // Parte 2
+        function testeo1() {
+            for (let i = 1900; i < 2100; i++) {
+                if (esBisiesto(i)) {
+                    console.log(`Año: ${i}`);
+                }
+            }
+        }
+        testeo1();
+    </script>
+</body>
+</html>
