@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Parte 1
+        function calcularCirculo(radio) {
+            // Perimetro : PI * diametro
+            // Area: PI * r**2
+            if (radio < 0) {
+                throw new Error("El radio no puede ser negativo");
+            }
+            // La estructura se devolveria asi: [Perimetro, Area]. Los redondeo en el mismo return
+            let datos = [redondearDecimales(Math.PI * radio * 2, 2), redondearDecimales(Math.PI * radio**2, 2)];
+            return datos;
+        }
+        // Utilizo la funcion hecha en clase.
+        function redondearDecimales(numero, decimales) {
+            return (Math.round(numero * Math.pow(10, decimales)) / Math.pow(10, decimales));
+        }
+        
+        // Parte 2
+        function calcularCirculo(radio) {
+            // Perimetro : PI * diametro
+            // Area: PI * r**2
+            if (radio < 0) {
+                throw new Error("El radio no puede ser negativo");
+            }
+            // La estructura se devolveria asi: [Perimetro, Area]. Los redondeo en el mismo return
+            let datos = {perimetro: redondearDecimales(Math.PI * radio * 2, 2), area: redondearDecimales(Math.PI * radio**2, 2)};
+            return datos;
+        }
+
+        // Parte 3
+        
+    </script>
+</body>
+</html>
