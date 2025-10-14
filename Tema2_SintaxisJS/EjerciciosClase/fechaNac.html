@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fechaNacimiento = new Date(2004, 8, 15);
+        let fechaNacimiento2 = new Date(1973, 3, 17);
+
+        // Se pasa al formato nacional del pais: (ej: dd/mm/yyyy)
+        console.log(fechaNacimiento.toLocaleDateString());
+
+        console.log(fechaNacimiento.getFullYear());
+        
+        // Coge el dia de la fecha
+        console.log(fechaNacimiento.getDate());
+        
+        // Coge el dia de la semana:
+        console.log(fechaNacimiento.getDay());
+
+        let hoy = new Date(2025, 9, 14);
+
+        // Tiempo pasado en milisegundos entre la fecha y el 01/01/1970
+        hoy.getTime();
+        
+        const MSG_UN_DIA = 24 * 60 * 60 * 1000;
+
+        let msgEntreDosFechas = hoy.getTime() - fechaNacimiento.getTime();
+
+        console.log(msgEntreDosFechas);
+
+        // Dias que han pasado entre hoy y mi cumpleaños
+        console.log(Math.round(msgEntreDosFechas/MSG_UN_DIA));
+        
+        const MSG_UNA_HORA = 1 * 60 * 60 * 1000;
+        
+        // Horas que han pasado entre hoy y mi cumpleaños
+        console.log(Math.round(msgEntreDosFechas/MSG_UNA_HORA));
+
+    </script>
+</body>
+</html>

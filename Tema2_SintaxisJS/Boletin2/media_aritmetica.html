@@ -20,6 +20,9 @@
         if (isNaN(decimales)) {
           return redondearDecimales(media, 1);
         }
+        // Despues de corrección:
+        // en el parametro se le puede poner (function calcularMedia(array, decimales = 1)) {}
+        // Así, si no se le pasa ningún argumento, por defecto será 1.
         return redondearDecimales(media, decimales);
       }
 

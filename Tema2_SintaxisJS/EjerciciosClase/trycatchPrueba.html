@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        con error.message en un try catch podemos ver el error que saltaria si no estuviera
+
+        por ejemplo si tengo un throw new Error("No puede ser negativo") en una funcion
+        y la pasamos por un try catch:
+
+        try {
+            calcularCirculo(radio);
+        } catch (Error) {
+            alert(`Se ha producido un error ${error.message}`); 
+        }
+
+        Seguirá el flujo del código sin cortarse y además mostraremos el mensaje
+        */
+       function calcularCirculo(radio) {
+            // Perimetro : PI * diametro
+            // Area: PI * r**2
+            if (radio < 0) {
+                throw new Error("El radio no puede ser negativo");
+            }
+            // La estructura se devolveria asi: [Perimetro, Area]. Los redondeo en el mismo return
+            let datos = {perimetro: redondearDecimales(Math.PI * radio * 2, 2), area: redondearDecimales(Math.PI * radio**2, 2)};
+            return datos;
+        }
+        try {
+            calcularCirculo(-5);
+        } catch (error) {
+            alert(`Ha saltado un error:  ${error.message}`);
+        }
+    </script>
+</body>
+</html>

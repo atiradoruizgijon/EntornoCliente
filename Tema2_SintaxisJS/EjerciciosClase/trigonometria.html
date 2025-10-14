@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*  gr*Pi
+        X = -----   Para pasar a radianes
+             360
+        */   
+
+        // JavaScript trabaja en radianes
+        // Asi que si queremos hacer el coseno de 20º debemos hacer: Math.cos((20*Math.PI)/360);
+        console.log(Math.cos((20*Math.PI)/360));
+
+        // Podemos hacer una funcion que nos pase los grados a radianes.
+        function grad2rad(grados) {
+            return grados/360*Math.PI;
+        }
+
+        let grados = 20;
+
+        console.log(`El coseno de ${grados} grados es ${Math.cos(grad2rad(grados))}`);
+    </script>
+</body>
+</html>
