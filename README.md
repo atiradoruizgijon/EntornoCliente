@@ -1,2 +1,2 @@
-# Ejercicios Entorno Cliente
+# Repositorio para Entorno Cliente
 ## Alejandro Tirado Nieto

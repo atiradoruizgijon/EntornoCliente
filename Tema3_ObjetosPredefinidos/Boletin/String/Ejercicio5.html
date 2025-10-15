@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let texto = "En un lugar de la Mancha de cuyo nombre no quiero acordarme";
+
+        console.log(texto);
+        
+        // No estoy seguro a que se refiere con extraer, si eliminarla con replace
+        // o sacarla con slice, así que haré estás dos cosas:
+
+        console.log(texto.slice(6, 11));
+
+        // Eliminarla
+        texto = texto.replace("lugar ", "");
+
+        console.log(texto);
+    </script>
+</body>
+</html>
