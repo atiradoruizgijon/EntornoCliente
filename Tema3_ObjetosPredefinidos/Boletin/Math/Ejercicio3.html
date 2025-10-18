@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Introduzco directamente en grados:
+        console.log(Math.cos(30)); 
+        // La calculadora de Windows da 0,8660254037844386467
+        // Mientras que nuestro resultado es 0.15425144988758405
+
+        // Paso a radianes:
+        function grad2rad(grad) {
+            return (grad * Math.PI) / 180;
+        }
+        
+        console.log(Math.cos(grad2rad(30)));
+
+    </script>
+</body>
+</html>
