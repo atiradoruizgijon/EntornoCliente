@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Introduzco la hora 14:47:40 para mostrarlas despues
+        let fechaHoy = new Date(2025, 9, 18, 14, 47, 40);
+        console.log(fechaHoy);
+
+        console.log(fechaHoy.getFullYear());
+
+        // los meses van de 0 a 11
+        console.log(fechaHoy.getMonth());
+        // si queremos representarlo bien:
+        console.log(fechaHoy.getMonth() + 1);
+        
+        // Dia del mes:
+        console.log(fechaHoy.getDate());
+        // Dia de la semana:
+        console.log(fechaHoy.getDay());
+
+        // horas minutos y segundos
+        console.log(fechaHoy.getHours());
+        console.log(fechaHoy.getMinutes());
+        console.log(fechaHoy.getSeconds());
+        </script>
+</body>
+</html>
