@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let numeros = [[-8, 7], [12, 5], [-12, 5]];
+
+        for (let i = 0; i < numeros.length; i++) {
+            // array.legth - 1 para que no haya problemas con el indice
+            for (let j = 0; j < numeros[i].length - 1; j++) {
+                console.log(Math.min(numeros[i][j], numeros[i][j + 1]));
+            }
+        }
+    </script>
+</body>
+
+</html>
