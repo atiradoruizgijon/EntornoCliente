@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Ejercicio 1
+        let ej1_array1 = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas' , 'Limones'];
+        let ej1_array2 = new Array(['Plátanos', 'Naranjas', 'Pomelos', 'Fresas' , 'Limones']);
+
+        // Ejercicio 2
+        console.log("\nEjercicio 2\n"); // Aviso por consola entre ejercicios para diferenciarlos
+        
+        let ej2_array = [5, 2, , 3, -2, 7, ,9];
+        let ej2_suma = 0;
+
+        for (let i = 0; i < ej2_array.length; i++) {
+            if (!isNaN(ej2_array[i])) {
+                ej2_suma += ej2_array[i];
+            }
+        }
+        console.log(`Suma: ${ej2_suma}`);
+
+
+        // Ejercicio 3
+        console.log("\nEjercicio 3\n");
+
+        let ej3_array = ['Huelva', 'Sevilla', 'Córdoba'];
+        console.log(ej3_array);
+        
+        ej3_array.push('Jaén');
+        ej3_array.push('Granada');
+        console.log(ej3_array);
+        
+        ej3_array.pop();
+        console.log(ej3_array);
+
+        // Ejercicio 4
+        console.log("\nEjercicio 4\n");
+
+        let ej4_array = ['Huelva', 'Sevilla', 'Córdoba'];
+
+        ej4_array.unshift('Cádiz');
+        console.log(ej4_array);
+        
+        // Extraido
+        console.log(ej4_array.shift());
+        console.log(ej4_array);
+
+        // Ejercicio 5
+        console.log("\nEjercicio 5\n");
+
+        let ej5_array = ['Huelva', 'Sevilla', 'Córdoba'];
+
+        delete ej5_array[1];
+
+        // Se elimino y el valor en ese indice se muestra como undefined:
+        console.log(ej5_array.at(1));
+
+        // Ejercicio 6
+        console.log("\nEjercicio 6\n");
+
+        let ej6_array = ['Huelva', 'Sevilla', 'Córdoba', 'Jaén', 'Almería', 'Granada', 'Málaga', 'Cádiz'];
+
+        console.log(ej6_array.sort());
+        console.log(ej6_array.reverse());
+        
+        // Ejercicio 7
+        console.log("\nEjercicio 7\n");
+
+        let ej7_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
+
+        ej7_array.splice(1, 1);
+
+        console.log(ej7_array);
+        
+        ej7_array.splice(1, 0, 'Limones');
+        
+        console.log(ej7_array);
+
+        // Ejercicio 8
+        console.log("\nEjercicio 8\n");
+
+        ej8_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
+
+        console.log(ej8_array.slice(2,3));
+
+        // Ejercicio 9
+        console.log("\nEjercicio 9\n");
+
+        let ej9_array1 = ['Plátanos', 'Naranjas', 'Pomelos'];
+        let ej9_array2 = ['Cebollas', 'Pepinos', 'Pimientos'];
+
+        ej9_array1 = ej9_array1.concat(ej9_array2);
+
+        console.log(ej9_array1);
+
+        // Ejercicio 10
+        console.log("\nEjercicio 10\n");
+
+        let ej10_array = ['Plátanos', 'Naranjas', 'Pomelos'];
+
+        /*
+        No sé a que se refiere con recorrerlo de 4 formas distintas
+        más allá de un for clásico o con un foreach que todavía
+        no lo hemos visto en clase.
+
+        Así que asumiré que será recorrerlo en distinto orden.
+        */
+        console.log("\n");
+        for (let i = 0; i < ej10_array.length; i++) {
+            console.log(ej10_array[i]);
+        }
+        console.log("\n");
+        
+        for (let i = (ej10_array.length - 1); i >= 0; i--) {
+            console.log(ej10_array[i]);
+        }
+
+        console.log("\n");
+        
+        for (let i = 0; i < ej10_array.length; i += 2) {
+            console.log(ej10_array[i]);
+        }
+        console.log("\n");
+        
+        for (let i = (ej10_array.length - 1); i >= 0; i -= 2) {
+            console.log(ej10_array[i]);
+        }
+        
+        // Ejercicio 11
+        console.log("\nEjercicio 11\n");
+
+        let ej11_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
+
+        console.log(ej11_array.indexOf('Pomelos'));
+        // Devuelve -1 al no encontrarlo
+        console.log(ej11_array.indexOf('Sandía'));
+
+        // Ejercicio 12
+        console.log("\nEjercicio 12\n");
+
+        let ej12_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
+
+        console.log(ej12_array.includes('Naranjas'));
+        console.log(ej12_array.includes('Peras'));
+
+        // Ejercicio 13
+        console.log("\nEjercicio 13\n");
+
+        let ej13_array1 = [2, 12, 22, 30, 36];
+
+        function esPar(n) {
+            return n % 2 == 0;
+        }
+
+        console.log(ej13_array1.every(esPar));
+        
+        let ej13_array2 = [2, 12, 22, 7, 30, 36];
+
+        console.log(ej13_array2.every(esPar));
+
+        // Ejercicio 14
+        console.log("\nEjercicio 14\n");
+
+        let ej14_array1 = [2, 9, 7, 5.4, 8];
+
+        function cuadrado(n) {
+            return n ** 2;
+        }
+
+        let ej14_array2 = ej14_array1.map(cuadrado);
+
+        console.log(ej14_array1);
+        console.log(ej14_array2);
+        
+        // Ejercicio 15
+        console.log("\nEjercicio 15\n");
+
+        let ej15_array1 = [2, 7, 22, 3, 30, 17];
+
+        function esImpar(n) {
+            return n % 2 == 1;
+        }
+
+        let ej15_array2 = ej15_array1.filter(esImpar);
+
+        console.log(ej15_array1);
+        console.log(ej15_array2);
+        
+        // Ejercicio 16
+        console.log("\nEjercicio 16\n");
+
+        let ej16_array = [2, 12, 7, 22, 3, 30, 17];
+
+        console.log(ej16_array.find(esImpar));
+
+        // Ejercicio 17
+        console.log("\nEjercicio 17\n");
+
+        let ej17_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Plátanos', 'Fresas'];
+
+        console.log(ej17_array.lastIndexOf('Plátanos'));
+        </script>
+</body>
+</html>
