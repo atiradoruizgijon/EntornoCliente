@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fecha1 = new Date(2025, 9, 19);
+        let fecha2 = new Date(2004, 8, 15);
+
+        console.log(diasTranscurridos(fecha1, fecha2));
+
+        function diasTranscurridos(fecha1, fecha2) {
+            // milisegundos en un dia 86400000
+            return Math.abs(fecha1.getTime() - fecha2.getTime()) / 86400000;
+        }
+    </script>
+</body>
+</html>

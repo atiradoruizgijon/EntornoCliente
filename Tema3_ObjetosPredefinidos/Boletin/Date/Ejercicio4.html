@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let fNac = new Date(2004, 8, 15);
+
+        console.log(devolverDia(fNac.getDay()));
+
+        function devolverDia(dia) {
+            switch (dia) {
+                case 0:
+                    return "Domingo";
+                    break;
+                case 1:
+                    return "Lunes";
+                    break;
+                case 2:
+                    return "Martes";
+                    break;
+                case 3:
+                    return "Miércoles";
+                    break;
+                case 4:
+                    return "Jueves";
+                    break;
+                case 5:
+                    return "Viernes";
+                    break;
+                case 6:
+                    return "Sábado";
+                    break;
+                default:
+                    throw new Error("Número fuera de rango/valor inválido");
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fecha = new Date('2021', '1', '28');
+
+        fecha.setDate(fecha.getDate()+1)
+        console.log(fecha);
+
+        let fecha2 = new Date('2020', '1', '28');
+
+        fecha2.setDate(fecha2.getDate()+1)
+        console.log(fecha2);
+
+        /*
+        Porque 2020 es un año bisiesto, teniendo el 29 febrero.
+        */
+    </script>
+</body>
+</html>
