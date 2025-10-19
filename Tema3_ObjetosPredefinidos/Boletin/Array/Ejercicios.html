@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         // Ejercicio 1
-        let ej1_array1 = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas' , 'Limones'];
-        let ej1_array2 = new Array(['Plátanos', 'Naranjas', 'Pomelos', 'Fresas' , 'Limones']);
+        let ej1_array1 = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas', 'Limones'];
+        let ej1_array2 = new Array(['Plátanos', 'Naranjas', 'Pomelos', 'Fresas', 'Limones']);
 
         // Ejercicio 2
         console.log("\nEjercicio 2\n"); // Aviso por consola entre ejercicios para diferenciarlos
-        
-        let ej2_array = [5, 2, , 3, -2, 7, ,9];
+
+        let ej2_array = [5, 2, , 3, -2, 7, , 9];
         let ej2_suma = 0;
 
         for (let i = 0; i < ej2_array.length; i++) {
@@ -30,11 +32,11 @@
 
         let ej3_array = ['Huelva', 'Sevilla', 'Córdoba'];
         console.log(ej3_array);
-        
+
         ej3_array.push('Jaén');
         ej3_array.push('Granada');
         console.log(ej3_array);
-        
+
         ej3_array.pop();
         console.log(ej3_array);
 
@@ -45,7 +47,7 @@
 
         ej4_array.unshift('Cádiz');
         console.log(ej4_array);
-        
+
         // Extraido
         console.log(ej4_array.shift());
         console.log(ej4_array);
@@ -67,7 +69,7 @@
 
         console.log(ej6_array.sort());
         console.log(ej6_array.reverse());
-        
+
         // Ejercicio 7
         console.log("\nEjercicio 7\n");
 
@@ -76,9 +78,9 @@
         ej7_array.splice(1, 1);
 
         console.log(ej7_array);
-        
+
         ej7_array.splice(1, 0, 'Limones');
-        
+
         console.log(ej7_array);
 
         // Ejercicio 8
@@ -86,7 +88,7 @@
 
         ej8_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Fresas'];
 
-        console.log(ej8_array.slice(2,3));
+        console.log(ej8_array.slice(2, 3));
 
         // Ejercicio 9
         console.log("\nEjercicio 9\n");
@@ -103,34 +105,31 @@
 
         let ej10_array = ['Plátanos', 'Naranjas', 'Pomelos'];
 
-        /*
-        No sé a que se refiere con recorrerlo de 4 formas distintas
-        más allá de un for clásico o con un foreach que todavía
-        no lo hemos visto en clase.
-
-        Así que asumiré que será recorrerlo en distinto orden.
-        */
         console.log("\n");
+
         for (let i = 0; i < ej10_array.length; i++) {
             console.log(ej10_array[i]);
         }
+
         console.log("\n");
-        
-        for (let i = (ej10_array.length - 1); i >= 0; i--) {
+
+        for (let i in ej10_array) {
             console.log(ej10_array[i]);
         }
 
         console.log("\n");
-        
-        for (let i = 0; i < ej10_array.length; i += 2) {
-            console.log(ej10_array[i]);
+
+        for (let item of ej10_array) {
+            console.log(item);
         }
+
         console.log("\n");
-        
-        for (let i = (ej10_array.length - 1); i >= 0; i -= 2) {
-            console.log(ej10_array[i]);
-        }
-        
+
+        ej10_array.forEach(function (fruta) {
+            console.log(fruta);
+        });
+
+
         // Ejercicio 11
         console.log("\nEjercicio 11\n");
 
@@ -158,7 +157,7 @@
         }
 
         console.log(ej13_array1.every(esPar));
-        
+
         let ej13_array2 = [2, 12, 22, 7, 30, 36];
 
         console.log(ej13_array2.every(esPar));
@@ -176,7 +175,7 @@
 
         console.log(ej14_array1);
         console.log(ej14_array2);
-        
+
         // Ejercicio 15
         console.log("\nEjercicio 15\n");
 
@@ -190,7 +189,7 @@
 
         console.log(ej15_array1);
         console.log(ej15_array2);
-        
+
         // Ejercicio 16
         console.log("\nEjercicio 16\n");
 
@@ -204,6 +203,7 @@
         let ej17_array = ['Plátanos', 'Naranjas', 'Pomelos', 'Plátanos', 'Fresas'];
 
         console.log(ej17_array.lastIndexOf('Plátanos'));
-        </script>
+    </script>
 </body>
+
 </html>
