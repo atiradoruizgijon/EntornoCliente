@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let sinDuplicidad = new Set();
+
+        sinDuplicidad.add(8);
+        sinDuplicidad.add(7);
+        sinDuplicidad.add(8);
+
+        // Vemos como solo hay dos numeros
+        console.log(sinDuplicidad);
+
+        // si queremos pasarlo a array usamos Array.from:
+
+        let datos = Array.from(sinDuplicidad);
+        datos.push(8);
+
+        console.log(datos);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hasDuplicates(arr) {
+            let elementos = [];
+            for (let i = 0; i < arr.length; i++) {
+                if (elementos.includes(arr[i])) return true;
+                elementos.push(arr[i]);
+            }
+            return false;
+        }
+
+        console.log(hasDuplicates(["hola", "adios", "hola"]));
+        
+        // Otra forma:
+        function hasDuplicates2(arr) {
+            return arr.some(x => arr.indexOf(x) !== arr.lastIndexOf(x));
+        }
+
+        console.log(hasDuplicates2(["hola", "adios", "hola"]));
+    </script>
+</body>
+</html>

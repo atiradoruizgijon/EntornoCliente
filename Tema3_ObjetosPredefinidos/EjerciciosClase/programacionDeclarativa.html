@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let datos = [5, 7, 2, 10, 2, 1];
+        let filtrado = [];
+
+        // Filtrar los impares:
+        for (let i = 0; i < datos.length; i++) {
+            if (datos[i] % 2 != 0) {
+                filtrado.push(datos[i]);
+            }
+        }
+
+        console.log(filtrado);
+        
+        // Con filter:
+        let datos2 = [5, 7, 2, 10, 2, 1];
+        let filtrado2 = [];
+        
+        function esImpar(n) {
+            return n % 2 != 0;
+        }
+        
+        filtrado2 = datos2.filter(esImpar);
+        
+        console.log(filtrado2);
+
+        // Con funcion anonima:
+        let datos3 = [5, 7, 2, 10, 2, 1];
+        let filtrado3 = [];
+        
+        filtrado3 = datos3.filter(
+            function (num) {
+                return num % 2 != 0;
+            }
+        );
+        
+        console.log(filtrado3);
+        
+        // Con funcion flecha (anónima):
+        let datos4 = [5, 7, 2, 10, 2, 1];
+        let filtrado4 = [];
+        
+        filtrado4 = datos4.filter( num => num % 2 != 0 );
+        
+        console.log(filtrado4);
+
+        console.log(datos.every( num => num % 2 != 0 ));
+
+        console.log(["hola", "adiós", "pelota"].map(elemento => elemento.toUpperCase()));
+        
+        </script>
+</body>
+</html>

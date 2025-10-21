@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fechaStr = "21/10/2025"; // 21 de octubre de 2025
+
+        let dia = Number(fechaStr.split("/")[0]); // 21 de como number
+        let mes = Number(fechaStr.split("/")[1]); // 10 de como number
+        let anio = Number(fechaStr.split("/")[2]); // 10 de como number
+
+        let fechaDate = new Date(anio, mes - 1, dia);
+
+        console.log(fechaDate.toLocaleDateString());
+    </script>
+</body>
+</html>
