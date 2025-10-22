@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let array1 = [6, 2, 1];
+        // let array2 = array1; // es una referencia al mismo array
+
+        // array2.push(7);
+
+        // // Como están en el mismo espacio en memoria, se carga en los dos
+        // console.log(array1);
+        // // esto tambien ocurre con objetos
+
+        let array1 = [6, 2, 1];
+        let array2 = array1.slice();
+
+        array2.push(7);
+
+        console.log("Contenido de array1:", array1);
+        console.log("Contenido de array2:", array2);
+        </script>
+</body>
+</html>
