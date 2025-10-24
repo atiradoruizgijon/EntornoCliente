@@ -31,6 +31,24 @@ describe('Tests de la función calcularCirculo()', () => {
     });
 });
 
-describe('', () => {
+describe('Test de caja negra para la función calcularCirculo()', () => {
     
+    // Observación: en los valores esperados, el perímetro y el área están redondeados a dos decimales
+    const datos = [
+        { radio: 1.4, valorEsperado: { perimetro: 8.80, area: 6.16 } },
+        { radio: 2.7, valorEsperado: { perimetro: 16.96, area: 22.90 } },
+        { radio: 5.37, valorEsperado: { perimetro: 33.74, area: 90.59 } },
+        { radio: 10.412, valorEsperado: { perimetro: 65.42, area: 340.58 } },
+        { radio: 12.2334, valorEsperado: { perimetro: 76.86, area: 470.16 } },
+    ];
+
+    datos.forEach(
+        (elem) => {
+            it(`El radio ${elem.radio} debe dar de perímetro: ${elem.valorEsperado.perimetro} y área: ${elem.valorEsperado.area}`, () => {
+                // toBeCloseTo no sirve para comparar objetos, así que hago dos separados.
+                expect(calcularCirculo(elem.radio).perimetro).toBeCloseTo(elem.valorEsperado.perimetro, 2);
+                expect(calcularCirculo(elem.radio).area).toBeCloseTo(elem.valorEsperado.area, 2);
+            });
+        }
+    );
 });
