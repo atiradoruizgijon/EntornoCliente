@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Matematica {
+            // Método estático (de clase)
+            static redondearDecimales(numero, deciamales) {
+                return Math.round(numero * Math.pow(10, deciamales)) / Math.pow(10, deciamales);
+            }
+
+            // Propiedad estática (de clase)
+            static PI = 3.1416;
+        }
+
+        console.log(Matematica.redondearDecimales(52.6435623632, 3));
+        console.log(Matematica.PI);
+    </script>
+</body>
+</html>

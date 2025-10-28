@@ -22,6 +22,7 @@ describe('Tests de la función calcularCirculo()', () => {
 
     // Comprobar que el objeto devuelto por la función contiene una propiedad llamada perimetro
     it('El objeto que devuelve la función debe tener una propiedad llamada perimetro.', () => {
+        // se puede hacer con hasOwnProperty(), funcion de JS que dice si tiene una propiedad o no.
         expect(calcularCirculo(5).perimetro).toBeDefined();
     });
 

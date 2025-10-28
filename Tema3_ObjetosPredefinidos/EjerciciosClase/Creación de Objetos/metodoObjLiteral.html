@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creación de métodos en un objeto literal,
+        // para ver que se pueden hacer sin necesidad de crear una clase.
+
+        const persona1 = {
+            nombre: "Juan",
+            edad: 26,
+            cumplirAños: function() {
+                this.edad++;
+            },
+            toString: function() {
+                return `${this.nombre} de ${this.edad} años`;
+            }
+        };
+
+        console.log(persona1.toString());
+        
+        console.log("Invocamos el método cumplirAños()");
+        persona1.cumplirAños();
+        console.log(persona1.toString());
+        
+        console.log("Cambiamos la propiedad nombre a Ana");
+        persona1.nombre = "Ana";
+        console.log(persona1.toString());
+        
+        // pero si quisieramos poner otra persona, habria que hacerlo otra vez.
+        const persona2 = {
+            nombre: "María",
+            edad: 39,
+            cumplirAños: function() {
+                this.edad++;
+            },
+            toString: function() {
+                return `${this.nombre} de ${this.edad} años`;
+            }
+        };
+        console.log(persona2.toString());
+        </script>
+</body>
+</html>

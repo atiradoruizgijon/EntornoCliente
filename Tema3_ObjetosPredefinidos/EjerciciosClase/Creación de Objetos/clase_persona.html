@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona {
+            // Propiedades pseudo internas
+
+            // Por convenio se empieza con '_' para que se sepa que es privada y 
+            // acceder a ellos con getters y setters. Aunque no lo sea
+            // ya que JS no lo permite
+
+            // Ni si quiera son obligatorias, en el constructor ya se instanciarian.
+            // por eso las comento
+            _nombre;
+            _edad;
+
+            constructor(nombre, apellidos, edad) {
+                this._nombre = nombre;
+                this._apellidos = apellidos;
+                this._edad = edad;
+            }
+
+            static CROMOSOMAS = 46;
+
+            static redondearDecimales(numero, deciamales) {
+                // lo que sea...
+                /*
+                Ahora podriamos utilizarlo como la clase Math
+                es decir, llamamos al método estatico
+                haciendo Math.round por ejemplo
+                */
+            }
+
+            cumplirAños() {
+                this._edad++;
+            }
+
+            toString() {
+                return `${this._nombre} de ${this._edad} años`;
+            }
+
+            get nombre() {
+                return this._nombre;
+            }
+            
+            get nombreCompleto() {
+                return this._nombre + " " + this._apellidos;
+            }
+
+            get edad() {
+                return this._edad;
+            }
+            
+            set edad(nuevaEdad) {
+                if (nuevaEdad < 0) throw new Error("La edad debe ser un valor positivo.");
+                this._edad = nuevaEdad;
+            }
+        }
+
+        const persona1 = new Persona("Juan", "Sanchéz", 23);
+        const persona2 = new Persona("María", "del Mar", 32);
+
+        console.log("Persona 1");
+        console.log(persona1.toString());
+        console.log("Persona 1 cumple años");
+        persona1.cumplirAños();
+        console.log("Persona 1");
+        console.log(persona1.toString());
+
+        // Acceso al getter
+        console.log(persona1.edad);
+
+        // Acceso con el setter
+        persona1.edad = 19; // Utilizamos el setter
+        persona1._edad = 19; // Lo modificamos directamente
+
+        // La ventaja es que si hacemos esto
+        persona1._edad = -19;
+        // Lo modificaria poniendolo negativo
+        // pero si en el set ponemos una condicional, podemos controlarlo
+        // persona1.edad = -19; // aqui lanzaria un error
+
+        console.log(persona1.toString());
+        console.log(persona1.nombre);
+
+        console.log(persona1.nombreCompleto); // Getter que nos ayuda a obtener el nombre con apellidos
+    </script>
+</body>
+</html>
