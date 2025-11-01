@@ -34,7 +34,7 @@ class Persona {
     }
 
     toString() {
-        return this._nombre + ", " + this._edad + " años, altura de " + this._altura + "m";
+        return `${this._nombre}, ${this._edad} años, altura de ${this._altura}m`;
     }
 
     static cmpNombre(p1, p2) {
