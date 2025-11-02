@@ -21,13 +21,6 @@ class Reserva {
         return this._nombre.split(";")[1].trim();
     }
 
-    get fechaEntrada() {
-        return this._fechaEntrada;
-    }
-    get fechaSalida() {
-        return this._fechaSalida;
-    }
-
     get codigoCliente() {
         return (this.nombrePila.charAt(0) + this.apellido1 + this._dni.substring(5, 8)).toUpperCase();
     }
@@ -54,7 +47,7 @@ class Reserva {
         console.log(diaInicial);
         let coste = 0;
         // bucle que recorre todos los dias de estancia
-        for (let dias = this.numeroDiasEstancia; dias >= 0; dias--) {
+        for (let dias = this.numeroDiasEstancia; dias > 0; dias--) {
             if (diaInicial == 0) {
                 coste += 43;
             } else if (diaInicial == 6) {
