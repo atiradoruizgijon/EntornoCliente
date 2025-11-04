@@ -51,7 +51,7 @@ class Reserva {
     costeEstancia() {
         // numero de 0 a 6 que iremos incrementando y reiniciando para sumar el coste
         let diaInicial = this._fechaEntrada.getDay();
-        console.log(diaInicial);
+        // console.log(diaInicial);
         let coste = 0;
         // bucle que recorre todos los dias de estancia
         for (let dias = this.numeroDiasEstancia; dias >= 0; dias--) {
