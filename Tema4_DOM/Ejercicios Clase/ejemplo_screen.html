@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de uso del objeto screen</title>
+</head>
+
+<body>
+    <h1>Objeto screen</h1>
+    <h2>Propiedades:</h2>
+
+    <div id="demo"></div>
+
+    <script>
+        let text = "Total width/height: " + screen.width + "*" + screen.height + "<br>" +
+            "Available width/height: " + screen.availWidth + "*" + screen.availHeight + "<br>" +
+            "Color depth: " + screen.colorDepth + "<br>" +
+            "Color resolution: " + screen.pixelDepth;
+
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+
+</html>

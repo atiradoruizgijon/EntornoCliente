@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Captura el evento onload para llamar a una función cuando se carga la página web
+        window.addEventListener("load", iniciar);
+        // Esto nos permite tener el script arriba en el archivo antes del cuerpo de la pagina
+        // y que el se ejecute sin problemas.
+        
+        // No ponemos: iniciar(), porque entonces lo que hariamos es invocarla,
+        // acabando en el mismo error de antes, que se ejecuta la funcion sin
+        // haberse establecido el DOM.
+        
+        /*
+        Element hace referencia a elementos HTML
+        Nodes(nodos) pueden ser comentarios HTML
+        <!-- Como este -->
+        pueden ser texto: <p> ESTE TEXTO </p>
+
+        De hecho element es un nodo, hereda de él.
+        Pero claro, si queremos trabajar con nodos será más dificil,
+        ya que nos devuelve más cosas y es diferente.
+        */
+        
+        
+
+        // // selecciono el 'parrafo 3'
+        // let parrafo3 = document.querySelectorAll("p")[3];
+        // // apartir del parrafo 3, selecciono el div que es el padre
+        // let parrafosDentroDiv = parrafo3.parentElement.children;
+
+        // // recorre con un for el div entero y pintamos cada p uno por uno de rojo
+        // for (let i = 0; i < parrafosDentroDiv.length; i++) {
+        //     parrafosDentroDiv[i].style.color = "red";
+        // }
+
+        function iniciar() {
+            // selecciono el 'parrafo 3'
+        let parrafo3 = document.querySelectorAll("p")[3];
+        // apartir del parrafo 3, selecciono el div que es el padre
+        let parrafosDentroDiv = parrafo3.parentElement.children;
+
+        // recorre con un for el div entero y pintamos cada p uno por uno de rojo
+        for (let i = 0; i < parrafosDentroDiv.length; i++) {
+            parrafosDentroDiv[i].style.color = "red";
+        }
+        }
+    </script>
+
+    <p>Primer párrafo</p>
+    <div>
+        <p>Párrafo 1</p>
+        <p>Párrafo 2</p>
+        <p>Párrafo 3</p>
+    </div>
+    <p>Último párrafo</p>
+    
+    <script>
+        /*
+        Vamos a escoger todos los parrafos guiandonos desde el tercer parrafo:
+
+        document.querySelectorAll("p")[3];
+        <p>Párrafo 3</p>
+
+        let parrafoReferencia = document.querySelectorAll("p")[3]; 
+
+        parrafoReferencia.previousElementSibling
+        <p>Párrafo 2</p>
+
+
+        En este caso, 3 formas de referenciar al parrafo 1
+
+        parrafoReferencia.previousElementSibling.previousElementSibling
+        <p>Párrafo 1</p>
+        
+        parrafoReferencia.parentElement.children[0];
+        <p>Párrafo 1</p>
+        
+        parrafoReferencia.parentElement.firstElementChild 
+        <p>Párrafo 1</p>
+        
+        parrafoReferencia.parentElement.previousElementSibling
+        <p>Primer párrafo</p>
+
+        parrafoReferencia.parentElement.nextElementSibling
+        <p>Último párrafo</p>
+
+        document.querySelector("p").innerHTML;
+        "Primer párrafo"
+        nos devuelve el html interno del elemento seleccionado
+
+        */
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+        }
+        .warning {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="warning">Primer párrafo</p>
+    <p>Segundo párrafo</p>
+    <p class="warning">Tercer párrafo</p>
+    
+    <div class="warning">
+
+    </div>
+
+    <div id="zona">
+
+    </div>
+    Rojo:
+    <input type="radio" name="color" id="radio1"><br>
+    Verde:
+    <input type="radio" name="color" id="radio2"><br>
+    Azul:
+    <input type="radio" name="color" id="radio3"><br>
+
+    <input type="button" value="Crear párrafo mediante Element" onclick="crearParrafo()">
+
+    <input type="button" value="Crear párrafo por HTML" onclick="crearParrafoHTML()">
+    <script>
+        let contador = 1;
+        // esto crea objetos
+        function crearParrafo() {
+            // hay dos formas para crear elementos, con create element o con html
+            let parrafo = document.createElement("p"); // esto crea un objeto parrafo en memoria.
+            let nodoTexto = document.createTextNode(`Párrafo ${contador}`); // interior del html, es un objeto en memoria
+
+            // podemos cambiar propiedades de css
+            parrafo.style.color = "red";
+            parrafo.style.fontSize = "2.4em";
+
+            // con esto le añadimos a los parrafos un atributo Id HTML llamado "parrafo"
+            // lo podemos ver en el inspector del navegador
+            parrafo.id = "parrafo";
+
+            parrafo.appendChild(nodoTexto);
+            // aun asi no esta añadido, se han creado como objetos.
+            // ahora tenemos que referenciar a donde queremos meterlo
+            let nota = document.getElementById("zona");
+            zona.appendChild(parrafo); // añadimos el parrafo al div
+
+            contador++;
+        }
+
+        // esto crea html, que al ser introducido en el documento html, se pasa a objeto(en este caso objeto "p")
+        function crearParrafoHTML() {
+            let parrafo = `<p id="parrafo${contador}" style="color: red; font-size: 16px;">Párrafo ${contador}</p>`;
+            let zona = document.getElementById("zona");
+            zona.insertAdjacentHTML("beforeend", parrafo);
+            /*
+            Argumentos de insertAdjacentHTML:
+            - beforeend: antes del final del contenedor, es decir, AQUI </div>
+            - afterbegin: despues del comienzo, es decir, <div> AQUI
+            - beforebegin: antes del comienzo. AQUI <div>. entonces no sería hijo
+            - afterend: despues del final. </div> AQUI. entonces no sería hijo.
+            */
+            contador++;
+        }
+
+        // Con esto podemos seleccionar el segundo parrafo y cambiarlo de color en la consola del navegador
+        // document.getElementsByTagName("p")[1].style.color = "blue";
+
+        /*
+        Compruebo que inputs de tipo 'radio' estan marcados
+
+        document.getElementsByName("color")[0].checked
+        false
+        document.getElementsByName("color")[1].checked
+        false
+        document.getElementsByName("color")[2].checked
+        false
+        document.getElementsByName("color")[2].checked
+        true
+
+        Nos devuelve los elementos que tienen la clase 'warning'
+
+        document.getElementsByClassName("warning");
+        HTMLCollection { 0: p.warning, 1: p.warning, 2: div.warning, length: 3 }
+
+
+        El querySelector() solo devuelve el primer elemento
+        
+        document.getElementById("txtNombre") => document.querySelector("#txtNombre");
+        document.getElementsByClassName("warning") => document.querySelector(".warning");
+        document.getElementsByTagName("p") => document.querySelector("p");
+        aqui si tenemos 3 parrafos solo obtendra el primero
+
+
+
+        Seleccionar los párraos hijos inmediatos de un div:
+        <div>
+            <p>
+            <p>
+            <p>
+        </div>
+
+        como en css:
+        document.querySelector("div > p");
+        
+        Nos devuelve el primero que encuentra:
+        document.querySelector("input[type=radio]");
+
+        Nos devuelven todos
+        document.querySelectorAll("input[type=radio]");
+        */
+    </script>
+</body>
+
+</html>

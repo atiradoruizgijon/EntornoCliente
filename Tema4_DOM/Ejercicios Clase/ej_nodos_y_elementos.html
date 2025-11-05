@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" onclick="cambiarColorParrafosUsandoElements()" value="Usar Elements">
+    <input type="button" onclick="cambiarColorParrafosUsandoNodes()" value="Usar Nodes">
+    <div id="contenedor">
+        <p>Primer párrafo</p>
+        <!-- Esto es un comentario -->
+        <p>Segundo párrafo</p>
+        <p>Tercer párrafo</p>
+    </div>
+
+    <script>
+        /*
+        Obteniendo por elemento
+
+        let contenedor = document.querySelector("#contenedor");
+        undefined
+        contenedor.children
+        HTMLCollection { 0: p, 1: p, 2: p, length: 3 }
+
+
+
+        Aqui, seleccionando los nodos, nos cuenta hasta los saltos de linea,
+        ya que los nodos son cualquier elemento del fichero, ya sea texto
+        o un elemento HTML.
+        En este caso dando como resultado una lista de 9 nodos.
+        Esto nos dificulta el desarrollo. Nos ha seleccionado varios saltos de linea.
+
+        contenedor.childNodes
+        NodeList(9) [ #text, p, #text, <!--  Esto es un comentario  -->, #text, p, #text, p, #text ]
+        */
+
+        function cambiarColorParrafosUsandoElements() {
+            let contenedor = document.querySelector("#contenedor");
+            let parrafos = contenedor.children;
+            for (let i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = "red";
+            }
+        }
+        
+        function cambiarColorParrafosUsandoNodes() {
+            let contenedor = document.querySelector("#contenedor");
+            let nodos = contenedor.childNodes;
+            for (let i = 0; i < nodos.length; i++) {
+                // Comprobamos que es un elemento
+                if (nodos[i].nodeType == Node.ELEMENT_NODE) {
+                    nodos[i].style.color = "magenta";
+                } else {
+                    console.log(nodos[i].nodeType);
+                    console.log(nodos[i]);
+                }
+            }
+        }
+    </script>
+</body>
+</html> 

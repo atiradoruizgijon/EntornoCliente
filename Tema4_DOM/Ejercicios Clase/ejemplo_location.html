@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de uso del objeto location</title>
+</head>
+
+<body>
+    <h1>Objeto location</h1>
+    <h2>Propiedades:</h2>
+
+    <p><a id="w3s" href="https://www.iesruizgijon.com:8080/ciclos/daw/documento.php?id=5#top">
+        https://www.iesruizgijon.com:8080/ciclos/daw/documento.php?id=5#top</a></p>
+    <br>
+    <p id="demo"></p>
+
+    <script>
+        let anchor = document.getElementById("w3s");
+        let text = 
+            "<p>URL completa (href): " + anchor.href + "</p>" +
+            "<p>Protocolo (protocol): " + anchor.protocol + "</p>" +
+            "<p>Host y puerto (host): " + anchor.host + "</p>" +
+            "<p>Puerto (port): " + anchor.port + "</p>" +
+            "<p>Ruta (pathname): " + anchor.pathname + "</p>" +
+            "<p>Consulta (search): " + anchor.search + "</p>" +
+            "<p>Hash(#): " + anchor.hash + "</p>";
+
+        document.getElementById("demo").innerHTML = text;
+    </script>
+</body>
+
+</html>
