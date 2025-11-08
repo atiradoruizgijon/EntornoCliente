@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parrafos">
+
+    </div>
+    <label for="color">Color del párrafo</label>
+    <input type="text" name="color">
+    <button onclick="añadirConElement()">Añadir mediante Element</button>
+    <button onclick="añadirConHTML()">Añadir mediante HTML</button>
+
+    <script>
+        let contador = 0;
+        function añadirConElement() {
+            let parrafo = document.createElement("p");
+            let nodoTexto = document.createTextNode(`Párrafo ${contador}`);
+            parrafo.appendChild(nodoTexto);
+            
+            // recojo el color pedido
+            parrafo.style.color = document.querySelector("input").value;
+
+            let div = document.querySelector("div");
+            // añado el parrafo al div
+            div.appendChild(parrafo);
+
+            contador++;
+        }
+        function añadirConHTML() {
+            let color = document.querySelector("input").value;
+            let parrafo = `<p style="color: ${color};">Párrafo ${contador}</p>`;
+            
+            let div = document.querySelector("div");
+            div.insertAdjacentHTML("beforeend", parrafo);
+            contador++;
+        }
+    </script>
+</body>
+</html>
