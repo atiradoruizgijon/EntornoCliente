@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>DOM</title>
+    <meta charset="utf-8">
+    <style>
+        div {
+            background-color: #fff9c4;
+            /* amarillo claro */
+            border-radius: 12px;
+            /* bordes redondeados */
+            padding: 16px;
+            /* espacio interior */
+            border: 1px solid #f0e68c;
+            /* borde suave */
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Modificación de estilos del texto</h3>
+        <div>
+            <p>Párrafo 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet magna lorem, nec semper
+                ligula
+                laoreet in. Donec volutpat sollicitudin nulla, sit amet rutrum nisi volutpat eget. Fusce mollis leo ut
+                enim
+                volutpat egestas hendrerit vitae augue. </p>
+
+            <p>Párrafo 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet magna lorem, nec semper
+                ligula
+                laoreet in. Donec volutpat sollicitudin nulla, sit amet rutrum nisi volutpat eget. Fusce mollis leo ut
+                enim
+                volutpat egestas hendrerit vitae augue. </p>
+
+            <p>Párrafo 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam laoreet magna lorem, nec semper
+                ligula
+                laoreet in. Donec volutpat sollicitudin nulla, sit amet rutrum nisi volutpat eget. Fusce mollis leo ut
+                enim
+                volutpat egestas hendrerit vitae augue. </p>
+        </div>
+        <hr>
+        <label>Seleccionar el número de párrafo (del 1 al 3):</label>
+        <select id="input-numparrafo">
+            <option value="1">Párrafo 1</option>
+            <option value="2">Párrafo 2</option>
+            <option value="3">Párrafo 3</option>
+        </select>
+        <br>
+        <label>Seleccionar tamaño:</label>
+        <select id="input-size">
+            <option value="12">Small</option>
+            <option value="16">Medium</option>
+            <option value="22">Large</option>
+        </select>
+        </input>
+        <input type="button" onclick="cambiarTamaño();" value="Cambiar tamaño" />
+        <br>
+        <label>Seleccionar color:</label>
+        <select id="input-color">
+            <option value="#FF0000">Rojo</option>
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+        </select>
+        </input>
+        <input type="button" onclick="cambiarColor();" value="Cambiar color" />
+        <br>
+        <label>Style visibility:</label>
+        <select id="input-visibility">
+            <option value="visible">visible</option>
+            <option value="hidden">hidden</option>
+        </select>
+        <input type="button" onclick="cambiarVisibilidad();" value="Cambiar visilibidad" />
+        <br>
+        <label>Style display:</label>
+        <select id="input-display">
+            <option value="inline">inline</option>
+            <option value="none">none</option>
+        </select>
+        <input type="button" onclick="cambiarDisplay();" value="Cambiar display" />
+        <script src="estilos_texto.js"></script>
+</body>
+
+</html>

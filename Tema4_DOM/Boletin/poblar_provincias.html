@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const provincias = [
+            { nombre: "Huelva", id: 1 },
+            { nombre: "Sevilla", id: 2 },
+            { nombre: "Córdoba", id: 3 },
+            { nombre: "Jaén", id: 4 },
+            { nombre: "Almería", id: 5 },
+            { nombre: "Granada", id: 6 },
+            { nombre: "Málaga", id: 7 },
+            { nombre: "Cádiz", id: 8 }
+        ];
+        function poblar() {
+            let select = document.querySelector("select");
+            provincias.forEach(element => {
+                let option = `<option onclick='alert("${element.nombre}")' value="${element.id}">${element.nombre}</option>`;
+                select.insertAdjacentHTML("beforeend", option);
+            });
+        }
+    </script>
+
+    Provincias:
+    <select name="provincias"></select>
+    <button onclick="poblar()">Poblar</button>
+</body>
+
+</html>
