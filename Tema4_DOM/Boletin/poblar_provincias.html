@@ -22,6 +22,8 @@
         function poblar() {
             let select = document.querySelector("select");
             provincias.forEach(element => {
+                // si en onclick pongo el alert con 'alert', 
+                // comillas simples, funciona, pero no con comillas dobles "alert"
                 let option = `<option onclick='alert("${element.nombre}")' value="${element.id}">${element.nombre}</option>`;
                 select.insertAdjacentHTML("beforeend", option);
             });
