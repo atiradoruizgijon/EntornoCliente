@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 200px;
+        }
+        p {
+            cursor: pointer;
+        }
+        .warning {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="contenedor"></div>
+    <input type="button" onclick="crearParrafos()" value="Crear párrafos">
+    <script>
+        let contador = 1;
+        function crearParrafos() {
+            let nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = "Párrafo " + contador;
+            nuevoParrafo.id = "parrafo" + contador;
+            
+            // vamos a añadir un evento de manera dinámica
+            // hacemos que los nuevos parrafos apuntes hacia el manejador de eventos
+            nuevoParrafo.addEventListener("click", clickEnParrafo);
+
+            document.querySelector("#contenedor").appendChild(nuevoParrafo);
+            contador++;
+        }
+        // manejador de eventos
+        function clickEnParrafo(evento) {
+            // podemos saber que elemento ha sido el que ha disparado el evento
+            // cuando captura un evento, con la propiedad target, que nos devuelve
+            // el elemento que lo ha disparado
+            let elemento = evento.target;
+            alert("Has pulsado en un párrafo " + elemento.id);
+        }
+    </script>
+</body>
+
+</html>

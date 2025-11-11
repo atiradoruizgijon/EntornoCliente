@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Persona {
+            _nombre;
+            _edad;
+
+            constructor(nombre, edad) {
+                this._nombre = nombre;
+                this._edad = edad;
+            }
+
+            get edad() {
+                return this._edad;
+            }
+            get nombre() {
+                return this._nombre;
+            }
+
+            toString() {
+                return `${this._nombre} , ${this._edad} años`;
+            }
+
+            static cmpEdad(p1, p2) {
+                return p1.edad - p2.edad;
+            }
+
+            static cmpNombre(p1, p2) {
+                return p1.nombre.localeCompare(p2.nombre);
+            }
+        }
+
+        function volcarArrayConsola(array) {
+            array.forEach(element => {
+                console.log(element.toString());
+            });
+        }
+
+        let persona1 = new Persona("Juana", 61);
+        let persona2 = new Persona("Zamudio", 11);
+        let persona3 = new Persona("Joaquín", 31);
+        let persona4 = new Persona("Nuria", 18);
+
+        let arrayPersona = [persona1, persona2, persona3, persona4];
+        console.log("Sin ordenar:");
+        
+        volcarArrayConsola(arrayPersona);
+        
+        console.log("Ordenar por la edad: ");
+        arrayPersona.sort(Persona.cmpEdad);
+
+        volcarArrayConsola(arrayPersona);
+
+        console.log("Ordenar por la nombre: ");
+        arrayPersona.sort(Persona.cmpNombre);
+
+        volcarArrayConsola(arrayPersona);
+    </script>
+</body>
+</html>
