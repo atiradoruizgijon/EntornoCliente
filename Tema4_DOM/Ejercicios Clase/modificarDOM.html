@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Ejemplo de modificación DOM</h1>
+    <p>Primer párrafo</p>
+    <div>
+        <p>Primer hijo de div</p>
+        <p>Segundo hijo de div</p>
+        <p>Tercer hijo de div</p>
+    </div>
+    <p>Último párrafo</p>
+
+    <script>
+        let parrafoSegundoHijo = document.querySelectorAll("div > p")[1];
+
+        // Existe en memoria, pero no lo hemos añadido al DOM
+        let parrafoClonado = parrafoSegundoHijo.cloneNode(true);
+
+        // Ahora sí está añadido
+        document.querySelector("div").appendChild(parrafoClonado);
+
+        parrafoClonado.style.color = "red";
+
+        let parrafo1 = document.querySelectorAll("div > p")[0];
+
+        // quito el primer parrafo del div
+        document.querySelector("div").removeChild(parrafo1);
+
+        let nuevoParrafo = document.createElement("p").style.color = "blue";
+        nuevoParrafo.innerHTML = "Nuevo texto creado";
+        
+        // pongo como indice uno ya que antes he borrado uno, entonces cambia de posicion
+        let parrafoTercerHijo = document.querySelectorAll("div > p")[1];
+
+        // introduzco el nuevo parrafo detras del parrafo escogido
+        document.querySelector("div").insertBefore(nuevoParrafo, parrafoTercerHijo);
+    </script>
+</body>
+
+</html>
