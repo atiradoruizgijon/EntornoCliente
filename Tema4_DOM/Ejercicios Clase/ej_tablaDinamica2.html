@@ -4,11 +4,16 @@
 	<meta charset="uft-8" />
 	<title>Acceso DOM</title>
 </head>
+
 <body>
+
 <span>Texto</span>
+
 <input type="text" id="txtCaja">
 <input type="button" onclick="insertar();" value="Insertar texto nuevo">
+
 <table id="tabla" style="border:1px dashed green;"></table>
+
 <script>
 function insertar() {
 	var texto=document.getElementById('txtCaja').value;

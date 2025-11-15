@@ -8,28 +8,66 @@ function insertarFila() {
         `<tr>
         <td>${texto}</td>
         <td>
-        <button onclick='copiarEncima()'>Copiar encima</button>
-        <button onclick='borrar()'>Borrar</button>
-        <button onclick='actualizar()'>Actualizar</button>
-        <button onclick='subir()'>Arriba</button>
-        <button onclick='bajar()'>Abajo</button>
+        <button onclick='copiarEncima(this)'>Copiar encima</button>
+        <button onclick='borrar(this)'>Borrar</button>
+        <button onclick='actualizar(this)'>Actualizar</button>
+        <button onclick='subir(this)'>Arriba</button>
+        <button onclick='bajar(this)'>Abajo</button>
         </td>
         </tr>`);
-    }
-    function intercambiarFilas() {
-        // recojo los dos inputs con los que se indican las filas que quieres intercambiar
-        let numFilas = document.querySelectorAll('input[type="number"]');
-        // meto los valores en un array
-        numFilas = [numFilas[0].value, numFilas[1].value];
-        console.log(numFilas);
-        // valido que no se haya salido de rango:
+}
+
+
+function intercambiarFilas() {
+    try {
+        // recojo los indices de los elementos que quiero intercambiar
+        let inx = document.querySelectorAll('input[type="number"]');
+        inx = [inx[0].value - 1, inx[1].value - 1];
+    
+        // recojo las filas, y guardo las que quiero cambiar en unas
+        // variables para no perderlas
         let filas = document.querySelectorAll("tbody > tr");
-        if (filas.length < numFilas[0] || filas.length < numFilas[1] || 0 > numFilas[0] || 0 > numFilas[1]) {
-            alert("Filas indicadas fuera de rango.");
-        } else {
-            let aux = filas[numFilas[0] - 1];
-            filas[numFilas[0] - 1] = filas[numFilas[1] - 1];
-            filas[numFilas[1] - 1] = aux;
-            // document.querySelector("tbody").innerHTML = filas.innerHTML; // mal
-        }
+        let aux1 = filas[inx[0]].cloneNode(true);
+        let aux2 = filas[inx[1]].cloneNode(true);
+        // las intercambio:
+        filas[inx[0]].replaceWith(aux2);
+        filas[inx[1]].replaceWith(aux1);
+    } catch (error) {
+        alert("Filas indicadas fuera de rango.");
+    }
+}
+function borrar(boton) {
+    // del boton voy al segundo td y de ahi al tr:
+    let fila = boton.parentElement.parentElement;
+    document.querySelector("tbody").removeChild(fila);
+}
+function actualizar(boton) {
+    let texto = boton.parentElement.parentElement.firstElementChild;
+    texto.innerHTML = prompt("Introduce el nuevo valor:");
+}
+function copiarEncima(boton) {
+    let fila = boton.parentElement.parentElement;
+    let copiaFila = fila.cloneNode(true);
+    fila.before(copiaFila);
+    // añado el string "(copia)" a la copia de la fila
+    copiaFila.firstElementChild.innerHTML += " (copia)";
+}
+function subir(boton) {
+    try {
+        // fila a subir:
+        let fila = boton.parentElement.parentElement;
+        // lo pongo detras del hermano anterior:
+        fila.previousElementSibling.before(fila);
+    } catch (error) {
+        alert("La fila no puede subir más.");
+    }
+}
+function bajar(boton) {
+    try {
+        let fila = boton.parentElement.parentElement;
+        // hago lo mismo que al subir, pero con el siguiente hermano
+        fila.nextElementSibling.after(fila);
+    } catch (error) {
+        alert("La fila no puede bajar más.");
+    }
 }
