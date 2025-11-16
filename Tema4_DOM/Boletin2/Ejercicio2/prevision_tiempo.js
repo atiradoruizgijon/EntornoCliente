@@ -42,12 +42,12 @@ datos.forEach(element => {
         <td>${element.lluvias}</td>
         </tr>`);
     });
-
+    // negrita en las horas:
     let horas = document.querySelectorAll("td:first-child");
     horas.forEach((element) => {
         element.style.fontWeight = "bold";
     });
-    
+    // negrita y azul en la columna de lluvia
     let lluvia = document.querySelectorAll("tbody td:last-child");
     lluvia.forEach((element) => {
         element.style.fontWeight = "bold";
