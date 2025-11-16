@@ -4,7 +4,7 @@ function bonoloto() {
 
     for (let i = 0; i < 6; i++) {
         do {
-            aleatorio = Math.round((Math.random() * 49) + 1);
+            aleatorio = Math.round((Math.random() * 48) + 1);
         } while (array.includes(aleatorio));
 
         array[i] = aleatorio;
