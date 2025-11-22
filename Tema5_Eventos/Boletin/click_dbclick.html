@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            font-size: 2em;
+            font-family: sans-serif;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: lightblue;
+            border-radius: 10px;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let contador = 2;
+        function duplicar() {
+            contador *= 2;
+            document.querySelector("div").innerHTML = contador;
+        }
+    </script>
+
+    <div ondblclick="duplicar()">2</div>
+</body>
+</html>

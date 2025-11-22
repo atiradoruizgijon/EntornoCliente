@@ -1,0 +1,4 @@
+Load se dispará cuando se carga el HTML completo con todos los recursos de la página, como imágenes.
+
+Mientras que DOMContentLoaded se dispará cuando todo el DOM ya este cargado, independientemente de que
+haya otros recursos que cargar.
