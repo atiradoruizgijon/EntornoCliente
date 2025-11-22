@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cambiarColor(elemento, color) {
+            elemento.style.backgroundColor = color;
+        }
+        function devolverColor(elemento) {
+            elemento.style.backgroundColor = "white";
+        }
+    </script>
+
+    <a onmouseover="cambiarColor(this, 'blue')" onmouseout="devolverColor(this)" href="www.outlook.es">Outlook</a>
+    <a onmouseover="cambiarColor(this, 'red')" onmouseout="devolverColor(this)" href="www.yahoo.es">Yahoo</a>
+    <a onmouseover="cambiarColor(this, 'violet')" onmouseout="devolverColor(this)" href="www.gmail.com">Gmail</a>
+</body>
+</html>
