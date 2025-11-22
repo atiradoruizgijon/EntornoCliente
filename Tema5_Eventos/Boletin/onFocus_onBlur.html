@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function iniciar() {
+            let inputClave = document.querySelectorAll("input")[1];
+            inputClave.addEventListener("blur", validar);
+            function validar(evt) {
+                if (evt.target.value.length < 7 || evt.target.value.length > 20) {
+                    alert("La contraseña tiene que ser de mínimo 7 carácteres y un máximo de 20.");
+                }
+            }
+        }
+        addEventListener("load", iniciar);
+    </script>
+
+    <label for="nombre">Ingrese nombre de usuario:</label>
+    <input type="text" name="nombre">
+    <label for="clave">Ingrese clave:</label>
+    <input type="text" name="clave">
+    <button>Confirmar</button>
+</body>
+</html>
