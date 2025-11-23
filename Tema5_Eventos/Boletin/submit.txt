@@ -1,0 +1,3 @@
+preventDefault() sirve para cancelar el evento que disparan algunos elementos por defecto.
+Como los anchor 'a', que te redirijen a una página al clickar encima.
+O enviar un formulario con submit.
