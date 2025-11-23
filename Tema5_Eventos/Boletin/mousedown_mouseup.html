@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: red;
+            width: 300px;
+            height: 300px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function cambiarAmarillo(div) {
+            div.style.backgroundColor = "yellow";
+        }
+        function cambiarRojo(div) {
+            div.style.backgroundColor = "red";
+        }
+    </script>
+    <div onmousedown="cambiarAmarillo(this)" onmouseup="cambiarRojo(this)"></div>
+</body>
+</html>
