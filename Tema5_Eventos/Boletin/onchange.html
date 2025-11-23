@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function comprobar(elemento) {
+            // compruebo si la checkbox esta marcada con .checked
+            if (elemento.checked) {
+                document.querySelector("button").removeAttribute("disabled");
+            } else {
+                document.querySelector("button").setAttribute("disabled", "");
+            }
+        }
+    </script>
+    <input type="checkbox" onchange="comprobar(this)"> ¿Confirma los términos y condiciones? <br>
+    <button disabled>Confirmar</button>
+</body>
+</html>
