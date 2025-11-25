@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function iniciar() {
+            document.querySelector("a").addEventListener("click", clicHiperenlace);
+            document.querySelector("form").addEventListener("submit", submitFormulario);
+        }
+        // Manejador eventos hiperenlace
+        function clicHiperenlace(evt) {
+            let href = evt.target.href;
+            // let href = evt.target.getAttribute("href");
+            alert(`href = ${href}`);
+            // Cancelar el efecto del click en el hiperenlace:
+            evt.preventDefault();
+        }
+        function submitFormulario(evt) {
+            let nombre = document.querySelector("#txt-nombre").value;
+            alert(`nombre = ${nombre}`);
+            evt.preventDefault();
+        }
+        addEventListener("load", iniciar);
+    </script>
+
+    <h1>Ejemplo de evt.preventDefault()</h1>
+    <a href="https://iesruizgijon.es">Ruiz Gijon</a>
+
+    <form action="https://iesruizgijon.es" method="get">
+        <label for="txt-nombre">Nombre</label>
+        <input type="text" name="" id="txt-nombre">
+        <label for="txt-email">Email</label>
+        <input type="email" name="" id="txt-email">
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>

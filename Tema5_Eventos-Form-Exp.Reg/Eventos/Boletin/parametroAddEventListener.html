@@ -21,6 +21,9 @@
             height: 50px;
             margin: 2px;
         }
+        :disabled {
+            background-color: #e9e9ed;
+        }
     </style>
 </head>
 
@@ -52,6 +55,7 @@
         function marcar(evt) {
             let boton = evt.target;
             boton.value = signo;
+            boton.setAttribute("disabled", "");
 
             signo = signo == 'X' ? 'O' : 'X';
             ganador();
