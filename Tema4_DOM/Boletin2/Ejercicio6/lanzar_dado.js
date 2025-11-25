@@ -6,11 +6,12 @@ function lanzar() {
     let dado = document.querySelector("#dado");
 
     // intervalo que cambia el dado:
+    // cada intervalo devuelve una id, la llamamos idTemporizador
     idTemporizador = setInterval(() => {
         dado.innerHTML = Math.round((Math.random() * 5) + 1);
     }, TIEMPO_ROTACION);
 
-    // detengo el intervalo:
+    // detengo el intervalo por su id:
     setTimeout(() => {
         clearInterval(idTemporizador);
     }, DURANCION_LANZAMIENTO);

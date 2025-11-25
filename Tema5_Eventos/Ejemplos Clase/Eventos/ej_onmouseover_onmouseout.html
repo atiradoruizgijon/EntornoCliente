@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 300px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function iniciar() {
+            let contenedor = document.querySelector("#contenido");
+            contenedor.addEventListener("mouseover", entrarEnDiv);
+            contenedor.addEventListener("mouseout", salirDelDiv);
+        }
+        function entrarEnDiv(evt) {
+            console.log("Ratón ha entrado en zona del div");
+            /*
+            mouseover { target: div#contenido, buttons: 0, clientX: 403, clientY: 173, layerX: 403, layerY: 173 }
+            */
+            let eltoHTML = evt.target; // Tenemos una referencia al elemento que ha disparado el evento.
+            eltoHTML.style.backgroundColor = "red";
+        }
+        function salirDelDiv(evt) {
+            console.log("Ratón ha salido de la zona del div");
+            let eltoHTML = evt.target; // Tenemos una referencia al elemento que ha disparado el evento.
+            eltoHTML.style.backgroundColor = "antiquewhite";
+        }
+        addEventListener("load", iniciar);
+    </script>
+
+    <h1>Ejemplo onmouseover y onmouseout</h1>
+    <div id="contenido"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- Podemos también ponerlo en el body: -->
+<!-- <body onload="iniciar()"> -->
+<body>
+    <script>
+        // si no se lo añadimos a un objeto haciendo: objeto.addEventListener
+        // se le asignará por defecto a window. Como window.addEventListener.
+        addEventListener("load", iniciar);
+        
+        // otra forma seria añadirlo a window.onload como propiedad:
+        // window.onload = iniciar;
+        
+        // Manejador de eventos (funcion encargada de manejar eventos)
+        function iniciar() {
+            document.querySelector("#contenido").textContent = "Hola";
+            alert("Se ha cargado la página web");
+
+            // Añadimos el manejador de eventos del botón
+            // antes hicimos window.onload, dandole el evento a la ventana,
+            // pero también podemos darselo a elementos como este boton:
+            let boton = document.querySelector("input").addEventListener("click", decirHola);
+
+            // también podemos hacer esto:
+            // boton.onclick = decirHola;
+            
+            /*
+            O crear la función sobre la marcha con una funcion anonima:
+            boton.onclick = () => {alert("hola mundo")};
+            boton.onclick = function () {alert("hola mundo")};
+            */ 
+        }
+
+        // Manejador de eventos del boton
+        function decirHola() {
+            alert("Hola");
+        }
+    </script>
+
+    <input type="button" value="Pulsar">
+    <div id="contenido"></div>
+
+</body>
+</html>
