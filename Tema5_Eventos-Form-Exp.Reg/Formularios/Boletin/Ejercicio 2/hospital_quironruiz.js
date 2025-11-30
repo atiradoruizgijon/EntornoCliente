@@ -70,9 +70,32 @@ function validarHora() {
     fecha = new Date(fechaInput.value + " " + horaInput.value);
     // hora = horaInput.value;
     
-    console.log(fecha.getTime());
-    let condicionLunesMiercoles = fecha.getDay() >= 1 && fecha.getDay() <= 3 ;
-    let condicionJueves = fecha.getDay() == 4;
+    console.log(fecha);
+    let condicionLunesMiercoles = fecha.getDay() >= 1 && fecha.getDay() <= 3 && fecha.getHours() >= 10 && fecha.getHours() <= 14;
+    let condicionJueves = fecha.getDay() == 4 && fecha.getHours() >= 18 && fecha.getHours() <= 20;
+    
+    if (fecha.getDay() == 4) {
+        if (condicionJueves) {
+            // en caso de que sean menos de las 18:30
+            if ((fecha.getHours() == 18 && fecha.getMinutes() < 30) || (fecha.getHours() == 20 && fecha.getMinutes() > 0)) {
+                horaInput.setCustomValidity("La hora en el horario del Jueves ha de ser de 18:30 a 20:00");
+            } else {
+                horaInput.setCustomValidity("");
+            }
+        } else {
+            horaInput.setCustomValidity("La hora en el horario del Jueves ha de ser de 18:30 a 20:00");
+        }
+    } else {
+        if (condicionLunesMiercoles) {
+            // en caso de que sean más de las 14:15
+            if (fecha.getHours() == 14 && fecha.getMinutes() > 15) {
+                horaInput.setCustomValidity("La hora en el horario Lunes-Miércoles ha de ser de 10:00 a 14:15");
+            } else {
+                horaInput.setCustomValidity("");
+            }
+        } else {
+            horaInput.setCustomValidity("La hora en el horario Lunes-Miércoles ha de ser de 10:00 a 14:15");
+        }
+    }
 }
-document.querySelector("#inputHoraCita").addEventListener("change", validarHora);
-document.querySelector("#inputHoraCita").addEventListener("keypress", validarHora);
+document.querySelector("input[type=submit]").addEventListener("click", validarHora);
