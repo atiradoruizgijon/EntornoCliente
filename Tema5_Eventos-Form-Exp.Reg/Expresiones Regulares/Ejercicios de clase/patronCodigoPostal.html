@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Primera forma:
+        let patronCP1 = RegExp("^\\d{5}$");
+        console.log(patronCP1.test("41710"));
+        console.log(patronCP1.test("4171a"));
+
+        // Segunda forma:
+        let patronCP2 = /^\d{5}$/;
+        console.log(patronCP2.test("41710"));
+        console.log(patronCP2.test("4171a"));
+        </script>
+</body>
+</html>

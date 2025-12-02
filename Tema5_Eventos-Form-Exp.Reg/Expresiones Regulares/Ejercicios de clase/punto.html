@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // el '.' equivale a cualquier caracter excepto un salto de línea
+        let patron = /^a.{3}a$/;
+        // en este caso son 5 caracteres, dos 'a' y tres cualquiera
+        console.log(patron.test("a-+5a"));
+        console.log(patron.test("a-\n-a"));
+    </script>
+</body>
+</html>

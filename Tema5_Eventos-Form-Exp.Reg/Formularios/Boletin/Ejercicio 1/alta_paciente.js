@@ -6,6 +6,8 @@ function iniciar() {
     
     // queria hacerlo con el evento submit pero me da problemas no sé exactamente porqué
     document.querySelector("#enviar").addEventListener("click", comprobarCigarrillos);
+
+    // rellenarCampos();
 }
 addEventListener("load", iniciar);
 
@@ -25,6 +27,10 @@ function fumador(evt) {
         select.setAttribute("disabled", "");
     }
 }
+
+// function rellenarCampos() {
+//     document.getElementById("minombre").value = "Alejandro";
+// }
 
 // compruebo al mandar en el formulario que se manda un valor en el select
 function comprobarCigarrillos(evt) {

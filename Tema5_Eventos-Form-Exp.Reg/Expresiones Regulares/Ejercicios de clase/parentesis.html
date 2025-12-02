@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // al poner el parentesis y al lado ?
+        // decimos que toda esa parte puede ser opcional
+        // En este caso es opcional poner una coma
+        // o no, haciendo opcional que sea un numero decimal o no.
+        let patron = /^[+-]\d+(,\d+)?$/; //esta mal, corregir
+        console.log(patron.test("554"));
+        console.log(patron.test("554,5423"));
+    </script>
+</body>
+</html>

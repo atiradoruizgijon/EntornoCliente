@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // \d (un numero decimal 0-9)
+        // ^ inicio de cadena, $ fin de cadena
+        let patronCP = /\d{5}/;
+        // true
+        console.log(patronCP.test("41710"));
+        // true
+        console.log(patronCP.test("417105"));
+        // true
+        console.log(patronCP.test("gfsdgsdfgdsf41710sgdfgsdfgdf"));
+        
+        patronCP = /^\d{5}/;
+        // false
+        console.log(patronCP.test("gfsdgsdfgdsf41710sgdfgsdfgdf"));
+        // true
+        console.log(patronCP.test("41710sgdfgsdfgdf"));
+
+
+        // expresion que evalua si hay alguna palabra que termine en 'ón'
+        let patronFinCadena = /ón$/;
+        console.log(patronFinCadena.test("Camión"));
+        console.log(patronFinCadena.test("Melón"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let patron1 = /niñ[oa]/;
+        console.log(patron1.test("niño"));
+        console.log(patron1.test("niña"));
+        console.log(patron1.test("niñe"));
+
+        // si queremos un rango de letras:
+        patron1 = /niñ[a-z]/;
+        // false:
+        console.log(patron1.test("niññ"));
+        // no incluye ñ o tildes, hay que añadirlas:
+        patron1 = /niñ[a-zñáéíóúü]/;
+        console.log(patron1.test("niññ"));
+
+
+
+        // mayusculas:
+        patron1 = /niñ[aoAO]/;
+        console.log(patron1.test("niñA"));
+        // o tambien. i = insensitive (insensible a mayusculas/minusculas)
+        patron1 = /niñ[ao]/i;
+        console.log(patron1.test("niñA"));
+
+
+        </script>
+</body>
+</html>

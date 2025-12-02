@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // {x} hasta ese numero
+        // {x,y} desde x a y
+        // {x,} minimo x
+        let patron = /[a]{6}[b]{3,6}[c]{3,}/;
+        // {x,y} ambos numeros han de estar pegados a la coma, no vale {x, y}
+        console.log(patron.test("aaaaaabbbccccccccccccccccc"));
+        // en ciertos casos en los que queramos que algo sea opcional
+        // podemos hacer {0,1}
+        // pero lo podemos reducirlo a: '?'
+        // más otras opciones:
+        // {0,1} = ?
+        // {0,} = *     (es decir, 0 o más ocurrencias)
+        // {1,} = +     (minimo una ocurrencia o más)
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /*
+        \d -> [0-9]
+        \D -> [^0-9]    '^' en este caso es negacion, es decir, que no sea ningun digito del 0-9, es decir, solo letras
+        \w -> [a-zA-Z0-9_]
+        \W -> [^a-zA-Z0-9_]
+        \s -> espacio en blanco
+       */
+
+        // ejemplo espacio \s:
+
+        let patron = /^\w+\s\w+$/;
+        console.log(patron.test("Alejandro   Tirado"));
+        console.log(patron.test("Alejandro Tirado"));
+    </script>
+</body>
+</html>

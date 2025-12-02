@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // con '|' decimos si queremos una cosa u otra:
+        let patron = /(lunes|martes|miércoles|jueves)/;
+        console.log(patron.test("lune"));
+        console.log(patron.test("lunes"));
+        
+        console.log("Vaca");
+        patron = /(va|ba)ca/;
+        console.log(patron.test("vaca"));
+        console.log(patron.test("baca"));
+        console.log(patron.test("caca"));
+    </script>
+</body>
+</html>
