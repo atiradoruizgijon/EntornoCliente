@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Validar 3 números de un dígito separados por - o /
+        7-4-3
+        7/4/3
+
+        En vez de usar [-\/]
+        Usamos alternancia: (-|\/)
+
+        Esto hace que lo que este dentro de los paréntesis
+        se convierta en un grupo de captura,
+        lo que se capturará es lo que se introduzca.
+        Entonces si yo pongo \1, significa que repetiré
+        lo que ha salido en el primer grupo de captura,
+        si pongo \2 en el segundo grupo.
+
+        Es decir, en este caso, si en (-|\/)
+        ponemos un guion '-', entonces en \1 se repetirá el guión.
+        Obligando así el formato 7-4-3
+
+        Haciendo así que solo podamos poner 7/4/3 o  7-4-3
+        Peri no podremos poner  7/4-3
+
+        Si tuvieramos más parentesis, habrían más grupos de captura,
+        si por ejemplo toda esta expresión estuviese en un paréntesis,
+        entonces tendriamos 2 grupos de captura, y como (-|\/) esta dentro
+        del primero, hemos de utilizar \2 en vez de \1. 
+        
+        Pero:
+        Con '?:' hacemos que no capture el grupo, por si tenemos varios parentesis, 
+        y queremos poner \1 en vez de \2.
+        */
+       let patron = /^\d(-|\/)\d\1\d$/;
+    </script>
+</body>
+</html>

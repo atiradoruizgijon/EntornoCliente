@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str = 'a "witch" and her "broom" is one';
+        let patronEntreComillas = /".+"/g;
+        // nos abarcará desde la primera comilla de "witch" a la segunda comilla de "broom"
+        // teniendo en el array "witch" and her "broom". Pero no queremos eso.
+        // esto se debe a que es greedy (codicioso, ambicioso).
+        // Ya que " tambien entra dentro de la condicion de ".+", es decir, cualquier carácter.
+        // haciendo que " sea considerado como un caracter cualquiera, considerando las ultimas comillas como las de cierre.
+        console.log(str.match(patronEntreComillas));
+        
+        // para resolver esto le decimos a '.+' que se vuelva lazy, poniendo ? delante suya.
+        patronEntreComillas = /".+?"/g;
+        console.log(str.match(patronEntreComillas));
+    </script>
+</body>
+</html>

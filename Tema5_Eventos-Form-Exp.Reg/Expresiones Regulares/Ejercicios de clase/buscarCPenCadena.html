@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            Buscar un Código Postal en una cadena de texto
+
+            "41710"
+            /^\d{5}$/
+
+            Claro, si queremos buscarlo en una frase, hemos de excluir '^$',
+            ya que con eso decimos que es solo una palabra.
+
+            El problema de quitarlo, es que puede entrar cosas que no queremos
+            por los lados. Como 'aa41710as', y esto lo daría como válido
+
+            \b viene de boundary, es decir, un separador. \b entra dentro
+            de lo que nosotros considerariamos un limite/separador.
+            Seria como un espacio una "," un "." un ";". O el inicio o final de línea.
+            Así nos aseguramos de que no haya nada por delante o por detrás que nos estorbe.
+        */
+       let patron = /\b\d{5}\b/;
+       let frase = "CP de Utrera 41710";
+       frase.search(patron);
+
+       // por la propia definicion de \b, esto entonces esta bien:
+       frase = "CP de Utrera ..;,:41710..;,:";
+    </script>
+</body>
+</html>

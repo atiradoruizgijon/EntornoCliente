@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            El modificador multilinea /m
+            El modificador global /g
+        */
+        let cadena = "Utrera tiene 41710, los Palacios 41720 y Sevilla 41000";
+
+        // Le podemos pasar una expresion regular como argumento a ciertas funciones del objeto String 
+
+        // Al no ser global, solo reemplaza la primera ocurrencia:
+        console.log(cadena.replace(/\d{5}/,"C.P."));
+        
+        // Aqui si
+        console.log(cadena.replace(/\d{5}/g,"C.P."));
+
+        let texto = `El email de Javier Soldado es jsoldado@iesruizgijon.com y el de Fran Matías es fmatias@iesruizgijon.com`;
+        
+        // Aqui el array solo se introduce con el primero
+        console.log(texto.match(/\w+@\w+.com/));
+        // Aqui el array se llena entero con todos los emails, ya que hemos puesto el modificado global /g
+        console.log(texto.match(/\w+@\w+.com/g));
+
+        texto = "Hola, mi nombre; es Juan. Adiós";
+        // A split le podemos pasar una expresion regular para que no solo separe por un caracter que le indiquemos, si no varios.
+        // Normal:
+        console.log(texto.split(" "));
+        // Con expresión regular
+        console.log(texto.split(/[,;\.\s]/));
+    </script>
+</body>
+</html>
