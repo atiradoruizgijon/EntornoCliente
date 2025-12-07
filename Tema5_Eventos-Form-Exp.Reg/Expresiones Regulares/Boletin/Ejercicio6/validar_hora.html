@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validaHora(hora) {
+            return /^(([0-1]\d)|(2[0-3])):[0-5]\d:[0-5]\d$/.test(hora);
+        }
+        console.log(validaHora("25:70:53"));
+        console.log(validaHora("23:59:59"));
+        console.log(validaHora("00:10:10"));
+        console.log(validaHora("23:60:60"));
+    </script>
+</body>
+</html>
