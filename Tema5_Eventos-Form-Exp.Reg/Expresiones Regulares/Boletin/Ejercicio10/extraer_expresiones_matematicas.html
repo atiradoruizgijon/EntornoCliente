@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function extraeExpresionesMatemáticas(texto) {
+            return texto.match(/\{.+?\}/g);
+        }
+        console.log(extraeExpresionesMatemáticas(`La ecuación de una recta es {y=a*x + b}, la de un círculo {x^2+y^2 = r} y la de la parábola {y = x^2}`));
+    </script>
+</body>
+</html>
