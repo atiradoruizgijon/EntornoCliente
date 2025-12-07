@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function validaNumeroDecimal(numero) {
+            return /^[-+]?\d+(,\d+)?$/.test(numero);
+        }
+
+        console.log(validaNumeroDecimal("+d25"));
+        console.log(validaNumeroDecimal("+25"));
+        console.log(validaNumeroDecimal("-25"));
+        console.log(validaNumeroDecimal("25"));
+        console.log(validaNumeroDecimal("25,52"));
+        console.log(validaNumeroDecimal("+25,52"));
+        console.log(validaNumeroDecimal("-25,52d"));
+    </script>
+</body>
+</html>
