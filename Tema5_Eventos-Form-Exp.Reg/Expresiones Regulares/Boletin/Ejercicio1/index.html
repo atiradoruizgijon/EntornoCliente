@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="funciones.js"></script>
+    <script>
+
+        // Test de valida CP:
+        // true
+        console.log(validaCP("41710"));
+        // true
+        console.log(validaCP("   41710  "));
+        // false
+        console.log(validaCP("41710d"));
+
+        // Test de extrae CPs:
+        console.log(extraeCPs("Utrera tiene 41710, los Palacios 51720"));
+        
+        // Test de sustituye CPs:
+        console.log(sustituyeCPs("Utrera tiene 41710, los Palacios 51720"));
+
+    </script>
+</body>
+</html>
