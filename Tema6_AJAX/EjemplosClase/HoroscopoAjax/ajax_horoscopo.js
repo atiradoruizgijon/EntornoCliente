@@ -26,6 +26,11 @@ function cargarHoroscopo(url) {
       document.querySelector("#detalles").textContent = `Error al cargar los datos (HTTP ${xhr.status})`;
     }
   };
+
+  // tiempo de expiracion == timeout
+  xhr.timeout = 3000;
+
+  // Este se dispará al mandar la petición con .send()
   xhr.onloadstart = () => {
     document.querySelector("#detalles").textContent = 'Cargando...';
   };
