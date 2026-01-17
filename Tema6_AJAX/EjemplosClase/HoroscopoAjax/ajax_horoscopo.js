@@ -18,7 +18,15 @@ function presionEnlace(e) {
 // La siguiente función realiza la petición Ajax
 function cargarHoroscopo(url) {
   let xhr = new XMLHttpRequest();  // Creamos una instancia del objeto Ajax
-  xhr.open("GET", url, true); // Petición asíncrona de tipo GET. Los parámetros irán en la propia url
+  
+  let soloUrl = url.split("?")[0];
+  let parametro = url.split("?")[1];
+
+  xhr.open("POST", soloUrl, true); // Petición asíncrona de tipo GET. Los parámetros irán en la propia url
+  
+  // Se añade cabecera para indicar tipo de codificación POST
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  
   xhr.onload = () => {
     if (xhr.status >= 200 && xhr.status < 300) {
       document.querySelector("#detalles").textContent = xhr.responseText;
@@ -34,5 +42,5 @@ function cargarHoroscopo(url) {
   xhr.onloadstart = () => {
     document.querySelector("#detalles").textContent = 'Cargando...';
   };
-  xhr.send();
+  xhr.send(parametro);
 }
