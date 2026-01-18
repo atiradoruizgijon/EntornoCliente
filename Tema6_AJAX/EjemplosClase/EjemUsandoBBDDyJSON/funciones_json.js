@@ -8,6 +8,8 @@ function cargarPerifericos(e) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'perifericos_json.php', true);
     xhr.timeout = 3000; // Tiempo máximo de espera del API 3sg
+    
+    // si termina el tiempo de espera, se ejecuta esta función:
     xhr.ontimeout = () => {
         document.getElementById("resultados").innerHTML = "Tiempo de espera vencido";
     };
