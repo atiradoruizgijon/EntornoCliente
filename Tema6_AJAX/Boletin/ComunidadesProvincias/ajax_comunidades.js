@@ -27,6 +27,7 @@ function comunidades() {
             }
         } else {
             // Se ha recibido un código status de error
+            console.log(xhr.status);
             document.querySelector("#error").innerHTML = "Error al cargar los datos";
         }
     };
@@ -47,14 +48,19 @@ function rellenarComunidades(comunidades) {
 
 // Provincias:
 
+// idComunidad es la id de la comunidad relacionada a las provincias
 function provincias() {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', 'api_provincias.php', true);
+    let select = document.querySelector("#comunidades");
+    let idComunidad = select[select.selectedIndex].value;
+
+    xhr.open('GET', 'api_provincias.php?cod='+idComunidad, true);
     xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 300) {
             try {
-                // La api duelve en un XML, no puedo usar JSON.parse
-                // let provincias = JSON.parse(xhr.responseText);
+                let provincias = xhr.responseXML;
+                provincias = JSON.parse(xml2provincias(provincias));
+
                 rellenarProvincias(provincias);
 
                 document.querySelector(".carga").remove();
@@ -63,6 +69,7 @@ function provincias() {
             }
         } else {
             // Se ha recibido un código status de error
+            console.log(xhr.status);
             document.querySelector("#resultados").innerHTML = "Error al cargar los datos";
         }
     };
@@ -79,4 +86,16 @@ function rellenarProvincias(provincias) {
     provincias.forEach(provincia => {
         select.insertAdjacentHTML("beforeend", `<option value='${provincia.id}'>${provincia.nombre}</option>`);
     });
+}
+
+function xml2provincias(xml) {
+    let provincias = xml.getElementsByTagName("provincia");
+    let json = [];
+
+    provincias.forEach(element => {        
+        let id = element.getElementsByTagName("id")[0].textContent;
+        let nombre = element.getElementsByTagName("nombre")[0].textContent;
+        json.push({id: id, nombre: nombre});
+    });
+    return json;
 }
