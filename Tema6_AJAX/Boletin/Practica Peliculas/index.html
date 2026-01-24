@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>API Películas</title>
 </head>
 <body>
+    <!-- cabecera -->
+    <header class="header">
+        <h1 class="header__title">API Peliculas</h1>
+    </header>
+    
     <main class="main">
-        <nav class="nav">
-            <input type="text" name="titulo">
-            <input type="submit" value="Buscar">
-        </nav>
+
+        <!-- busqueda -->
+        <form class="main__form">
+            <input class="form__input" type="text" name="titulo" placeholder="Título de la película" required>
+            <select class="form__select" name="tipo" required>
+                <option value="" disabled selected>Selecciona tu opción</option>
+                <option value="movie">Películas</option>
+                <option value="series">Series</option>
+                <option value="episode">Episodios</option>
+            </select>
+            <input class="form__submit" type="submit" value="Buscar">
+        </form>
+
+        <!-- listado de peliculas -->
+         <table class="main__table">
+            
+            <!-- cabecera de la tabla -->
+            <thead class="table__header">
+                <tr class="header__tr">
+                    <th class="header__th">Título</th>
+                    <th class="header__th">Año</th>
+                    <th class="header__th">Tipo</th>
+                    <th class="header__th">Portada</th>
+                </tr>
+            </thead>
+
+            <!-- cuerpo tabla -->
+            <tbody class="table__body">
+            </tbody>
+         </table>
     </main>
 </body>
 </html>
