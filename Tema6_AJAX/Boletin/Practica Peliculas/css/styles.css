@@ -20,6 +20,7 @@ body {
 
 .main {
     width: 80%;
+    min-width: fit-content;
     padding: 35px;
     margin: 0 auto;
     background-color: white;
@@ -67,8 +68,9 @@ body {
 /* tabla */
 .main__table {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: 5vh auto;
     font-size: 1.2rem;
+    width: 100%;
 }
 
 /* cabecera tabla */
@@ -87,4 +89,16 @@ body {
 
 .body__td {
     padding: 10px 20px;
+}
+
+/* poster */
+.poster {
+    max-width: 250px;
+}
+
+.poster__img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
 }
