@@ -4,3 +4,61 @@
 
 <p>Sueldos: {{sueldos}}</p>
 <p>Activo: {{enActivo()}}</p>
+
+<!-- 
+  Directivas:
+
+  No son estáticas, por ejemplo,
+  si cambiamos la edad con un boton,
+  cambiará el texto.
+-->
+
+<!-- en else indicamos la id de la plantilla -->
+<p *ngIf="edad >= 18 ;else menor">Es mayor de edad.</p>
+<!-- hacemos una plantilla con el id 'menor' -->
+<ng-template #menor>
+  <p>Eres menor de edad</p>
+</ng-template>
+
+<!-- esto esta deprecated: -->
+@if(edad>=18) {
+  <p>Eres mayor de edad</p>
+} @else {
+  <p>Eres menor de edad</p>
+}
+
+<input type="button" (click)="cumplirMayoria()" value="Pulsar">
+
+<h1>Sueldos</h1>
+<ul>
+  <!-- ngFor se aplica sobre el elemento que queremos repetir -->
+  <li *ngFor="let sueldo of sueldos">{{sueldo}}</li>
+</ul>
+
+<ul>
+  <!-- esto esta deprecated: -->
+  @for (sueldo of sueldos; track sueldo) {
+    <li>{{sueldo}}</li>
+  }
+</ul>
+
+<select name="">
+  @for (prov of provincias; track prov) {
+    <option value="{{prov.id}}">{{prov.nombre}}</option>
+  }
+</select>
+
+<h1>Contador</h1>
+<p>{{contador}}</p>
+
+<input type="button" (click)="incrementarContador()" value="+">
+<input type="button" (click)="decrementarContador()" value="-">
+
+<!-- 
+  ngModel sirve para hacer un vinculo entre un campo de texto y una propiedad de nuestro typescript,
+  por ejemplo, al vincularlo con nombre, podemos modificar la propiedad nombre con un input
+  -->
+
+<h1>Directiva ngModel</h1>
+<input type="text" [(ngModel)]="nombre">
+<p>{{nombre}}</p>

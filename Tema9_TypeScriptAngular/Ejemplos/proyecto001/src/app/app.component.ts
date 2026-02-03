@@ -21,14 +21,31 @@ export class AppComponent {
 
   // si queremos tiparlo: nombre:string = 'Antonio'
   nombre = 'Antonio';
-  edad = 23;
+  edad = 16;
   sueldos = [1200, 1300, 1600];
   activo = false;
+  provincias = [
+    {id:1, nombre:"Huelva"},
+    {id:2, nombre:"Sevilla"},
+    {id:3, nombre:"Córdoba"},
+    {id:4, nombre:"Jaén"}
+  ];
+  contador:number = 1;
+
+  incrementarContador() {
+    this.contador++;
+  }
+  decrementarContador() {
+    this.contador--;
+  }
 
   enActivo() {
     return this.activo ? "En activo":"En paro";
   }
 
-  constructor() {
+  cumplirMayoria() {
+    this.edad = 18;
+    this.sueldos.push(Math.trunc(Math.random()*2000));
+    this.nombre = "Oscar Wilde";
   }
 }
