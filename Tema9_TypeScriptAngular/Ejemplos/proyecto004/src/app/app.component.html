@@ -1,0 +1,9 @@
+<h1>Ejemplo enviar información del padre al hijo</h1>
+
+<!-- property binding, lo usamos para pasar valor desde el padre al hijo: -->
+<app-dado [valor]="valor1"></app-dado>
+<app-dado [valor]="valor2"></app-dado>
+<app-dado [valor]="valor3"></app-dado>
+<br>
+<p>{{mensaje}}</p>
+<button (click)="lanzarDados()">Lanzar</button>
