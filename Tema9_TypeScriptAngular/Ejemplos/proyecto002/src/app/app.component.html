@@ -1,5 +1,6 @@
 <div>
   <h1>Administración de artículos</h1>
+  <!-- tabla se muestra si el tamaño del array es mayor 0 -->
     <table border="1" *ngIf="hayRegistros(); else sinarticulos">
       <tr>
         <td>Codigo</td><td>Descripcion</td><td>Precio</td><td>Borrar</td><td>Seleccionar</td>
@@ -8,22 +9,34 @@
         <td>{{art.codigo}}</td>
         <td>{{art.descripcion}}</td>
         <td>{{art.precio}}</td>
+        <td>{{art.categoria}}</td>
         <td><button (click)="borrar(art.codigo)">Borrar?</button></td>
-        <td><button (click)="seleccionar(art)">Seleccionar</button></td>        
+        <td><button (click)="seleccionar(art)">Seleccionar</button></td>
       </tr>
     </table>
+
+    <!-- si no hay articulos, se muestra -->
     <ng-template #sinarticulos><p>No hay articulos.</p></ng-template>
+    
     <div>
       <p>
         Codigo:<input type="number" [(ngModel)]="art.codigo" />
       </p>
+
       <p>
         descripcion:<input type="text" [(ngModel)]="art.descripcion" />
       </p>
+
       <p>
         precio:<input type="number" [(ngModel)]="art.precio" />
-      </p>            
+      </p>
+
+      <p>
+        categoria:<input type="text" [(ngModel)]="art.categoria" />
+      </p>
+
       <p><button (click)="agregar()">Agregar</button>
+      
       <button (click)="modificar()">Modificar</button></p>
     </div>
 </div>
