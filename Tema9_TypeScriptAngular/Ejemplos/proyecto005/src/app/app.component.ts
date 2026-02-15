@@ -21,7 +21,7 @@ export class AppComponent {
   }
 
   manejadorFinalcountdown(segundos:number) {
-    this.mensaje = "La cuenta atrás a finalizado";
+    this.mensaje = "La cuenta atrás ha finalizado";
   }
 
   reiniciar() {
