@@ -24,7 +24,7 @@ function peticion(evt) {
     console.log(tipo);
 
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", `http://www.omdbapi.com/?apikey=db107b00&s=${titulo}&type=${tipo}`, true);
+    xhr.open("GET", `https://www.omdbapi.com/?apikey=db107b00&s=${titulo}&type=${tipo}`, true);
     xhr.onload = () => {
         if (xhr.status >= 200 && xhr.status < 300) {
             try {
