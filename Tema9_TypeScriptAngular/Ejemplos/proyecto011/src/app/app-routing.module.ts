@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:"inicio", component: InicioComponent},
   {path:"listado-productos", component: ListadoProductosComponent},
   {path:"acerca-de", component: AcercaDeComponent},
-  {path:"*", component: Pagina404Component} // pagina de error, aunque se ponga lo que sea en la URL
+  {path:"**", component: Pagina404Component} // pagina de error, aunque se ponga lo que sea en la URL
 ];
 
 @NgModule({
