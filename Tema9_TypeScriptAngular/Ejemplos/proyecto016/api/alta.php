@@ -8,15 +8,20 @@
   
   //die($params);
   
-  require_once "ArticulosDB.php";
-  $conexion = ArticulosDB::connectDB();
-
-  $conexion->exec("INSERT INTO articulos(descripcion,precio)
-  VALUES ('$params->descripcion', $params->precio)");
-
-  $conexion = null;
+  require("conexion.php");
+  $con=retornarConexion();
   
-  header("HTTP/1.1 OK DATOS GRABADOS");
+
+  mysqli_query($con,"insert into articulos(descripcion,precio) values
+                  ('$params->descripcion',$params->precio)");
+    
+  
+  class Result {}
+
+  $response = new Result();
+  $response->resultado = 'OK';
+  $response->mensaje = 'datos grabados';
+
   header('Content-Type: application/json');
   echo json_encode($response);  
 ?>

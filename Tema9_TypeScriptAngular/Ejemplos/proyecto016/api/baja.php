@@ -1,15 +1,19 @@
 <?php 
   header('Access-Control-Allow-Origin: *'); 
   header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
-
-  require_once "ArticulosDB.php";
-  $conexion = ArticulosDB::connectDB();
-
-  $consulta = $conexion->query("DELETE FROM articulos WHERE codigo=$_GET[codigo]");
   
-  $conexion = null;
+  require("conexion.php");
+  $con=retornarConexion();
   
-  header("HTTP/1.1 OK ARTICULO BORRADO");
+  mysqli_query($con,"delete from articulos where codigo=$_GET[codigo]");
+    
+  
+  class Result {}
+
+  $response = new Result();
+  $response->resultado = 'OK';
+  $response->mensaje = 'articulo borrado';
+
   header('Content-Type: application/json');
   echo json_encode($response);  
 ?>

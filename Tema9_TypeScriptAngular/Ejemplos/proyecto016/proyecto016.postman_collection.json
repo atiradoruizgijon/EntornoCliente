@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "2279c898-e593-478b-bffe-42d44c8f1731",
+    "name": "proyecto016",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "10643642"
+  },
+  "item": [
+    {
+      "name": "Alta -  alta.php",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"descripcion\":\"clementinas\", \"precio\":\"76\"}"
+        },
+        "url": {
+          "raw": "https://entornocliente.ruix.iesruizgijon.es/angular/proyecto016/alta.php",
+          "protocol": "https",
+          "host": [
+            "entornocliente",
+            "ruix",
+            "iesruizgijon",
+            "es"
+          ],
+          "path": [
+            "angular",
+            "proyecto016",
+            "alta.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Modificacion - modificacion.php",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"codigo\":51, \"descripcion\":\"tomates de pera\", \"precio\":\"6.9\"}"
+        },
+        "url": {
+          "raw": "https://entornocliente.ruix.iesruizgijon.es/angular/proyecto016/modificacion.php",
+          "protocol": "https",
+          "host": [
+            "entornocliente",
+            "ruix",
+            "iesruizgijon",
+            "es"
+          ],
+          "path": [
+            "angular",
+            "proyecto016",
+            "modificacion.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Recuperar Todos -  recuperartodos.php",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://entornocliente.ruix.iesruizgijon.es/angular/proyecto016/recuperartodos.php",
+          "protocol": "https",
+          "host": [
+            "entornocliente",
+            "ruix",
+            "iesruizgijon",
+            "es"
+          ],
+          "path": [
+            "angular",
+            "proyecto016",
+            "recuperartodos.php"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Seleccionar -  seleccionar.php",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://entornocliente.ruix.iesruizgijon.es/angular/proyecto016/seleccionar.php?codigo=38",
+          "protocol": "https",
+          "host": [
+            "entornocliente",
+            "ruix",
+            "iesruizgijon",
+            "es"
+          ],
+          "path": [
+            "angular",
+            "proyecto016",
+            "seleccionar.php"
+          ],
+          "query": [
+            {
+              "key": "codigo",
+              "value": "38"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Baja - baja.php",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://entornocliente.ruix.iesruizgijon.es/angular/proyecto016/baja.php?codigo=47",
+          "protocol": "https",
+          "host": [
+            "entornocliente",
+            "ruix",
+            "iesruizgijon",
+            "es"
+          ],
+          "path": [
+            "angular",
+            "proyecto016",
+            "baja.php"
+          ],
+          "query": [
+            {
+              "key": "codigo",
+              "value": "47"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

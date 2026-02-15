@@ -1,30 +1,37 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Articulo } from './articulo';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArticulosService {
-  url='http://localhost/EntornoCliente/Tema9_TypeScriptAngular/Ejemplos/proyecto016/api/'; // disponer url de su servidor que tiene las páginas PHP
+
+ 
+  //url='http://scratchya.com.ar/angular/problema016/'; // disponer url de su servidor que tiene las páginas PHP
+  //url='http://proyecto016.com.devel/';
+  //url='https://ruizgijon.ddns.net/soldadoj/angularya/proyecto016/';
+  url=`http://localhost/EntornoCliente/Tema9_TypeScriptAngular/Ejemplos/proyecto016/api/`;
+  
   constructor(private http: HttpClient) { }
 
   recuperarTodos() {
-    return this.http.get<any>(`${this.url}recuperartodos.php`);
+    return this.http.get<Articulo[]>(`${this.url}recuperartodos.php`);
   }
 
-  alta(articulo:any) {
+  alta(articulo:Articulo) {
     return this.http.post<any>(`${this.url}alta.php`, JSON.stringify(articulo));    
   }
 
-  baja(codigo:number) {
-    return this.http.get<any>(`${this.url}baja.php?codigo=${codigo}`);
+  baja(codigo:string) {
+    return this.http.delete<any>(`${this.url}baja.php?codigo=${codigo}`);
   }
   
-  seleccionar(codigo:number) {
+  seleccionar(codigo:string) {
     return this.http.get<any>(`${this.url}seleccionar.php?codigo=${codigo}`);
   }
 
-  modificacion(articulo:any) {
-    return this.http.post<any>(`${this.url}modificacion.php`, JSON.stringify(articulo));    
-  }
+  modificacion(articulo:Articulo) {
+    return this.http.put<any>(`${this.url}modificacion.php`, JSON.stringify(articulo));    
+  } 
 }

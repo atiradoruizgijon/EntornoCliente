@@ -1,22 +1,28 @@
 import { Component } from '@angular/core';
+import { Articulo } from './articulo';
 import { ArticulosService } from './articulos.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  standalone: false,
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'proyecto016';
 
-  articulos:any;
+  articulos!:Articulo[] ;
   
-  art = {
-    codigo:0,
-    descripcion:"",
-    precio:0
-  }
+  art:Articulo = {
+    codigo:'',
+    descripcion:'',
+    precio:''
+  };
+
+ /*  art={
+    codigo:null,
+    descripcion:null,
+    precio:null
+  } */
 
   constructor(private articulosServicio: ArticulosService) {}
 
@@ -25,11 +31,14 @@ export class AppComponent {
   }
 
   recuperarTodos() {
-    this.articulosServicio.recuperarTodos().subscribe((result:any) => this.articulos = result);
+    this.articulosServicio.recuperarTodos().subscribe(result => 
+      {
+        this.articulos = result;
+      });
   }
 
   alta() {
-    this.articulosServicio.alta(this.art).subscribe((datos:any) => {
+    this.articulosServicio.alta(this.art).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
         this.recuperarTodos();
@@ -37,8 +46,8 @@ export class AppComponent {
     });
   }
 
-  baja(codigo:number) {
-    this.articulosServicio.baja(codigo).subscribe((datos:any) => {
+  baja(codigo:any) {
+    this.articulosServicio.baja(codigo).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
         this.recuperarTodos();
@@ -47,7 +56,7 @@ export class AppComponent {
   }
 
   modificacion() {
-    this.articulosServicio.modificacion(this.art).subscribe((datos:any) => {
+    this.articulosServicio.modificacion(this.art).subscribe(datos => {
       if (datos['resultado']=='OK') {
         alert(datos['mensaje']);
         this.recuperarTodos();
@@ -55,11 +64,12 @@ export class AppComponent {
     });    
   }
   
-  seleccionar(codigo:number) {
-    this.articulosServicio.seleccionar(codigo).subscribe((result:any) => this.art = result[0]);
+  seleccionar(codigo:any) {
+    this.articulosServicio.seleccionar(codigo).subscribe(result => this.art = result[0]);
   }
 
   hayRegistros() {
     return true;
   } 
+  
 }

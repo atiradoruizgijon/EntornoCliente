@@ -2,16 +2,17 @@
   header('Access-Control-Allow-Origin: *'); 
   header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
   
-  require_once "ArticulosDB.php";
-  $conexion = ArticulosDB::connectDB();
+  require("conexion.php");
+  $con=retornarConexion();
 
-  $consulta = $conexion->query("SELECT codigo, descripcion, precio FROM articulos WHERE codigo=$_GET[codigo]");
-  $conexion = null;
+  $registros=mysqli_query($con,"select codigo, descripcion, precio from articulos where codigo=$_GET[codigo]");
+    
+  if ($reg=mysqli_fetch_array($registros))  
+  {
+    $vec[]=$reg;
+  }
   
-  $vec = $consulta->fetch(PDO::FETCH_ASSOC);
-  
-  $cad = json_encode($vec);
+  $cad=json_encode($vec);
   echo $cad;
-  header("HTTP/1.1 OK ARTICULO SELECCIONADO");
   header('Content-Type: application/json');
 ?>

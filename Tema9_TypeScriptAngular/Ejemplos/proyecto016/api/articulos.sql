@@ -7,12 +7,9 @@
 -- Versión del servidor: 8.0.44-0ubuntu0.24.04.2
 -- Versión de PHP: 8.3.29
 
-CREATE DATABASE articulos;
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-USE articulos;
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
