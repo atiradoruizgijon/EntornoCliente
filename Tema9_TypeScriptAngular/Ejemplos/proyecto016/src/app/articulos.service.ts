@@ -11,7 +11,7 @@ export class ArticulosService {
   //url='http://scratchya.com.ar/angular/problema016/'; // disponer url de su servidor que tiene las páginas PHP
   //url='http://proyecto016.com.devel/';
   //url='https://ruizgijon.ddns.net/soldadoj/angularya/proyecto016/';
-  url=`http://localhost/EntornoCliente/Tema9_TypeScriptAngular/Ejemplos/proyecto016/api/`;
+  url=`https://ruizgijon.ddns.net/atirado/proyecto016/api/`;
   
   constructor(private http: HttpClient) { }
 

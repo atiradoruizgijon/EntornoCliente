@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php'; // credenciales/config DB
 
-sleep(2);
+// sleep(2);
 
 // Clase integrada (ya no necesitas Comunidad.php)
 class Comunidad

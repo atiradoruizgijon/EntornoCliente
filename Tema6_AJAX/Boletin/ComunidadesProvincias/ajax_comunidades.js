@@ -59,7 +59,7 @@ function provincias() {
         if (xhr.status >= 200 && xhr.status < 300) {
             try {
                 let provincias = xhr.responseXML;
-                provincias = JSON.parse(xml2provincias(provincias));
+                provincias = xml2provincias(provincias);
 
                 rellenarProvincias(provincias);
 
@@ -91,11 +91,24 @@ function rellenarProvincias(provincias) {
 function xml2provincias(xml) {
     let provincias = xml.getElementsByTagName("provincia");
     let json = [];
+    console.log(provincias);
+    console.log(provincias[0]);
 
-    provincias.forEach(element => {        
-        let id = element.getElementsByTagName("id")[0].textContent;
-        let nombre = element.getElementsByTagName("nombre")[0].textContent;
-        json.push({id: id, nombre: nombre});
-    });
+    // provincias.forEach(element => {        
+    //     let id = element.getElementsByTagName("id")[0].textContent;
+    //     let nombre = element.getElementsByTagName("nombre")[0].textContent;
+    //     json.push({id: id, nombre: nombre});
+    // });
+    
+    for (let i = 0; i < provincias.length; i++) {
+        // getElementsByTagName cogemos el indice 0, aunque solo sea un elemento el que busquemos,
+        // ya que este metodo devuelve un array con los elementos que coincidan con ese TagName,
+        // aunque solo sea uno
+        let id = provincias[i].getElementsByTagName("id")[0].textContent;
+        let nombre = provincias[i].getElementsByTagName("nombre")[0].textContent;
+        json.push({id: id, nombre: nombre});    
+    }
+
+    console.log(json);
     return json;
 }

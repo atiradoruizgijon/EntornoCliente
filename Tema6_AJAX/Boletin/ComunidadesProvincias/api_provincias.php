@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php'; // Incluir el archivo de configuración
-sleep(2);
+// sleep(2);
 
 class Provincia
 {
