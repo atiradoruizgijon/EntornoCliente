@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script type="text/javascript">
+
+      addEventListener('load', iniciar);
+
+      let articulos = [];
+
+      function iniciar() {
+         document.querySelector("#inputAñadir").addEventListener('click', añadirArticulo);
+         document.querySelector("#inputVaciarCarrito").addEventListener('click',vaciarCarrito);
+         recuperarCarrito();
+         mostrarCarrito();
+      }
+
+
+      function guardarCarrito() {
+         let json = JSON.stringify(articulos);
+         localStorage.articulos = json;
+      }
+
+      function recuperarCarrito() {
+         if (localStorage.articulos) {
+            articulos = JSON.parse(localStorage.articulos);
+         } else {
+            articulos = [];
+         }
+      }  
+
+      function vaciarCarrito(){
+         articulos = [];
+         guardarCarrito();
+         mostrarCarrito();
+      }
+
+      function mostrarCarrito() {
+         let contenidoTabla = "";
+         contenidoTabla += `<tr><th>Artículo</th><th>Cantidad</th><th>Descripción</th></tr>`;
+         if (articulos) {
+            articulos.forEach((item, index) => {
+               contenidoTabla += `<tr><td>${item.articulo}</td><td>${item.cantidad}</td><td>${item.descripcion}</td></tr>`
+            });
+         }
+
+         document.querySelector("#mitabla").innerHTML = contenidoTabla;
+      }
+
+      function añadirArticulo() {
+         let articulo = document.querySelector("#inputArticulo").value;
+         let cantidad = document.querySelector("#inputCantidad").value;
+         let descripcion = document.querySelector("#inputDescripcion").value;
+         articulos.push({ articulo: articulo, cantidad: cantidad, descripcion: descripcion });
+         guardarCarrito(articulos);
+         mostrarCarrito(articulos);
+      }  
+
+   </script>
+
+   <h1>Carrito usando localStorage</h1>
+   <p>Añade nuevos artículos al carrito</p>
+   <p>Cierra la ventana y vuelve a abrirla para comprobar el resultado.</p>
+
+   <label for="inputArticulo">Artículo:</label><input type="text" name="inputArticulo" id="inputArticulo"><br>
+   <label for="inputCantidad">Cantidad:</label><input type="number" name="inputCantidad" id="inputCantidad"><br>
+   <label for="inputDescripcion">Descripción:</label>
+   <textarea id="inputDescripcion"></textarea><br>
+   <input type="button" id="inputAñadir" value="Añadir">
+   <input type="button" value="Vaciar carrito" id="inputVaciarCarrito">
+   <br><br>
+   <table border="1px" id="mitabla">
+
+   </table>
+
+</body>
+
+</html>
