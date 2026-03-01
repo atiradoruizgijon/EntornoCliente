@@ -8,6 +8,9 @@ import { ListadoAlumnosComponent } from './listado-alumnos/listado-alumnos.compo
 import { AltaAlumnoComponent } from './alta-alumno/alta-alumno.component';
 import { ConjuntoTragaperrasComponent } from './conjunto-tragaperras/conjunto-tragaperras.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormField } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    ReactiveFormsModule,
+    MatFormField
   ],
   providers: [],
   bootstrap: [AppComponent]

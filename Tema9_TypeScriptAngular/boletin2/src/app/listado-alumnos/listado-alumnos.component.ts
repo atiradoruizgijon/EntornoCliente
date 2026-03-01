@@ -21,4 +21,9 @@ export class ListadoAlumnosComponent implements OnInit {
       }
     );
   }
+
+  // para pasar de 0 o 1 a Sí o No
+  getRepetidor(alumno: any) {
+  return alumno.repetidor === 0 ? 'No' : 'Sí';
+}
 }
