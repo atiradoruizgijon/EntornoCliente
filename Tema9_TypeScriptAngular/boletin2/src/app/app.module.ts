@@ -7,6 +7,7 @@ import { TragaperrasComponent } from './tragaperras/tragaperras.component';
 import { ListadoAlumnosComponent } from './listado-alumnos/listado-alumnos.component';
 import { AltaAlumnoComponent } from './alta-alumno/alta-alumno.component';
 import { ConjuntoTragaperrasComponent } from './conjunto-tragaperras/conjunto-tragaperras.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ConjuntoTragaperrasComponent } from './conjunto-tragaperras/conjunto-tr
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

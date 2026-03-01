@@ -1,1 +1,25 @@
-<p>listado-alumnos works!</p>
+<div class="container">
+    <main class="row justify-content-center align-items-center fs-4">
+        <table class="table table-striped">
+            <thead>
+                <tr class="table-primary">
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Mail</th>
+                    <th scope="col">Curso</th>
+                    <th scope="col">Repetidor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let alumno of alumnos">
+                    <td scope="row">{{alumno.nombre}}</td>
+                    <td>{{alumno.mail}}</td>
+                    <td>{{alumno.curso}}</td>
+                    <td *ngIf="alumno.repetidor == 0; else repetidor">No</td>
+                    <ng-template #repetidor>
+                        <td>Sí</td>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</div>
