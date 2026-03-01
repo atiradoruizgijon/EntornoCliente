@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-tragaperras',
@@ -13,10 +13,13 @@ export class TragaperrasComponent {
     "platano", "sandia", "siete", "uva"      
   ];
   resultado = this.tirarJugada();
+  @Output() sinCreditos = new EventEmitter();
+  @Output() premio = new EventEmitter();
+
 
   jugar() {
     if (this.credito < 5) {
-      alert("Sin suficiente crédito");
+      this.sinCreditos.emit(this.credito);
     } else {
       this.credito -= 5;
       this.resultado = this.tirarJugada();
@@ -25,7 +28,7 @@ export class TragaperrasComponent {
   }
 
   figuraAleatoria() {
-    return this.figuras[(Math.random() * this.figuras.length) + 1];
+    return this.figuras[Math.round(Math.random() * (this.figuras.length - 1))];
   }
 
   tirarJugada() {
@@ -37,11 +40,17 @@ export class TragaperrasComponent {
     // si los tres son iguales:
     if (r[0] == r[1] && r[0] == r[2]) {
       // si los 3 son siete:
-      if (r[0] == "siete") this.credito += 1000;
-      else this.credito += 20;
+      if (r[0] == "siete") {
+        this.credito += 1000;
+        this.premio.emit(1000);
+      } else {
+        this.credito += 20;
+        this.premio.emit(20);
+      } 
       // si alguno coinciden dos al menos
     } else if (r[0] == r[1] || r[0] == r[2] || r[1] == r[2]) {
       this.credito += 5;
+      this.premio.emit(5);
     }
   }
 }

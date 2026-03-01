@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { TragaperrasComponent } from './tragaperras/tragaperras.component';
 import { ListadoAlumnosComponent } from './listado-alumnos/listado-alumnos.component';
 import { AltaAlumnoComponent } from './alta-alumno/alta-alumno.component';
+import { ConjuntoTragaperrasComponent } from './conjunto-tragaperras/conjunto-tragaperras.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TragaperrasComponent,
     ListadoAlumnosComponent,
-    AltaAlumnoComponent
+    AltaAlumnoComponent,
+    ConjuntoTragaperrasComponent
   ],
   imports: [
     BrowserModule,

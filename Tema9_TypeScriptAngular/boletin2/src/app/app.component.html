@@ -6,17 +6,13 @@
   <section class="row flex-row">
     <aside class="bg-dark col-2">
       <ul class="nav nav-tabs flex-column text-center fs-3">
-        <li class="nav-link my-1" routerLink="/tragaperras">Tragaperras</li>
+        <li class="nav-link my-1" routerLink="/conjuntoTragaperras">Tragaperras</li>
         <li class="nav-link my-1" routerLink="/listadoAlumnos">Listado de alumnos</li>
         <li class="nav-link my-1" routerLink="/altaAlumnos">Alta de alumno</li>
       </ul>
     </aside>
     <div class="col-10">
-      <router-outlet>
-        <app-tragaperras [credito]="50"></app-tragaperras>
-        <app-tragaperras [credito]="70"></app-tragaperras>
-        <app-tragaperras [credito]="120"></app-tragaperras>
-      </router-outlet>
+      <router-outlet></router-outlet>
     </div>
   </section>
 </main>
